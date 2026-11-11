@@ -8,7 +8,7 @@
 Kilim, girih, makam, hat, ebru… Canvas, WebGL ve Web Audio ile, bağımlılıksız.
 
 [![Canlı galeri](https://img.shields.io/badge/canl%C4%B1-galeri-d6a756?style=flat-square)](https://py.execore.cloud/)
-[![Projeler](https://img.shields.io/badge/proje-11-9b2a22?style=flat-square)](#sahne)
+[![Projeler](https://img.shields.io/badge/proje-12-9b2a22?style=flat-square)](#sahne)
 [![Lisans: MIT](https://img.shields.io/badge/lisans-MIT-263b5e?style=flat-square)](LICENSE)
 [![Bağımlılık](https://img.shields.io/badge/projelerde%20ba%C4%9F%C4%B1ml%C4%B1l%C4%B1k-0-55703f?style=flat-square)](#yapı)
 
@@ -107,8 +107,10 @@ Dağınık mimari parçaları doğru bakış açısıyla birleştiren bir perspe
 <a href="https://py.execore.cloud/projects/impossible-room/">Canlı</a> · <a href="projects/impossible-room/">Kaynak</a>
 </td>
 <td width="50%" valign="top">
-<h3>🎭 Sırada</h3>
-Karagöz Perdesi: arkadan kandille aydınlanan perde, eklemli deri tasvirler. Tezgâhta dokunuyor.
+<a href="https://py.execore.cloud/projects/karagoz-perde/"><img src="projects/karagoz-perde/cover.jpg" alt="Karagöz Perdesi"></a>
+<h3>🎭 Karagöz Perdesi</h3>
+Arkadan kandille aydınlanan perde, deriden eklemli tasvirler: sürükle, salla, döndür, yürüt.<br>
+<a href="https://py.execore.cloud/projects/karagoz-perde/">Canlı</a> · <a href="projects/karagoz-perde/">Kaynak</a>
 </td>
 </tr>
 </table>
@@ -127,6 +129,7 @@ Projelerin arkasındaki fikirler. Ayrıntılar her projenin kendi README'sinde.
 | [Ebru](projects/ebru-water/) | Alanı koruyan kapalı biçimli dönüşümler (Jaffer & Lu, 2012) |
 | [Binary Bloom](projects/binary-bloom/) · [Iris](projects/iris-gaze/) · [Mira](projects/mira-face/) | Karakterden görüntü: derinlik maskesi, iki geçişli hücre çizimi, HDR + bloom |
 | [Orbit](projects/orbit-sequencer/) | Ses saatine bağlı ileri zamanlayıcı, erişilebilir nota ızgarası |
+| [Karagöz Perdesi](projects/karagoz-perde/) | Hiyerarşik sönümlü sarkaçlarla eklem fiziği, arkadan aydınlatılmış deri için multiply basımı, mesafeye göre bulanıklaşan gölge |
 | [Impossible Room](projects/impossible-room/) | Ortografik izdüşümde derinlik boyunca kaydırılan parçalar, histerezisli çözüm algılama |
 
 Ortak ilkeler:

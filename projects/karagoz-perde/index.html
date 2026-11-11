@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Karagöz Perdesi</title>
+  <meta name="description" content="Arkadan kandille aydınlanan perde, deriden eklemli tasvirler: sürükle, salla, döndür, yürüt; perdeden uzaklaşan gölge bulanıklaşır.">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#0e0907">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <main class="stage">
+    <canvas id="perde" tabindex="0" role="img"
+      aria-label="Arkadan kandille aydınlanan gölge oyunu perdesi; üzerinde deriden, renkli, eklemli Karagöz ve Hacivat tasvirleri ve bir ağaç."
+      aria-describedby="hint keys"></canvas>
+    <p class="hint" id="hint">Perdeye dokun: göstermelik kalksın, oyun başlasın.</p>
+
+    <section class="controls" aria-label="Perde kontrolleri">
+      <button type="button" id="gost" aria-pressed="true">Göstermelik</button>
+      <div class="pair">
+        <span>Karagöz</span>
+        <button type="button" id="walk-k">Yürüt</button>
+        <button type="button" id="flip-k">Döndür</button>
+      </div>
+      <div class="pair">
+        <span>Hacivat</span>
+        <button type="button" id="walk-h">Yürüt</button>
+        <button type="button" id="flip-h">Döndür</button>
+      </div>
+      <div class="range">
+        <label for="depth">Perdeden uzaklık</label>
+        <input id="depth" type="range" min="0" max="80" value="0">
+      </div>
+      <div class="range">
+        <label for="lamp">Kandil</label>
+        <input id="lamp" type="range" min="0" max="100" value="70">
+      </div>
+    </section>
+    <p class="sr-only" id="keys">Klavye: perdeye odaklan; 1 ve 2 tasvir seçer, oklar taşır, boşluk döndürür, Enter yürütür.</p>
+  </main>
+  <p class="sr-only" id="status" aria-live="polite"></p>
+</body>
+</html>

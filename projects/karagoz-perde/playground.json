@@ -1,0 +1,11 @@
+{
+  "title": "Karagöz Perdesi",
+  "slug": "karagoz-perde",
+  "description": "Arkadan kandille aydınlanan perde ve deriden eklemli tasvirler: sürükle, salla, döndür, yürüt; perdeden uzaklaşan gölge büyür ve bulanıklaşır.",
+  "tags": ["yaratıcı kodlama", "fizik", "etkileşim", "gölge oyunu", "canvas"],
+  "status": "ready",
+  "cover": "cover.jpg",
+  "entry": "index.html",
+  "accent": "#e0a04a",
+  "created": "2026-11-12"
+}
