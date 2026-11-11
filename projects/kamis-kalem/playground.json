@@ -1,0 +1,11 @@
+{
+  "title": "Kamış Kalem",
+  "slug": "kamis-kalem",
+  "description": "Hattatın düz uçlu kamış kalemiyle aharlı kâğıda yazı: açıdan doğan kalın-ince geçişler, kuruyan kalem, nokta ölçüsü ve yazılışı yeniden izleme.",
+  "tags": ["yaratıcı kodlama", "hat", "etkileşim", "canvas", "çizim"],
+  "status": "ready",
+  "cover": "cover.jpg",
+  "entry": "index.html",
+  "accent": "#9b1b1b",
+  "created": "2026-11-11"
+}

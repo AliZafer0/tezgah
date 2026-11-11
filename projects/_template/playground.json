@@ -1,0 +1,9 @@
+{
+  "title": "{{title}}",
+  "slug": "{{slug}}",
+  "description": "Kısa bir açıklama yaz: bu deney neyi deniyor?",
+  "tags": ["taslak"],
+  "status": "draft",
+  "entry": "index.html",
+  "created": "{{date}}"
+}

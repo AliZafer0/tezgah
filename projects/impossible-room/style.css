@@ -1,0 +1,426 @@
+:root {
+  color-scheme: light;
+  --paper: #f2ede4;
+  --paper-2: #e9e2d6;
+  --ink: #1f2a44;
+  --muted: #5d6273;
+  --coral: #e36c52;
+  --line: rgb(31 42 68 / 0.16);
+  --serif: "Didot", "Bodoni 72", "Iowan Old Style", "Palatino Linotype", Georgia, "DejaVu Serif", serif;
+  --sans: "Avenir Next", "Segoe UI", system-ui, -apple-system, "DejaVu Sans", sans-serif;
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+* { box-sizing: border-box; }
+
+html,
+body {
+  min-height: 100%;
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+[hidden] { display: none !important; }
+
+.app {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  height: 100svh;
+  min-height: 480px;
+  padding: max(20px, env(safe-area-inset-top)) clamp(16px, 3vw, 36px) max(16px, env(safe-area-inset-bottom));
+  gap: 10px;
+}
+
+/* ---------- Üst ---------- */
+.top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.brand h1 {
+  margin: 0;
+  font-size: 0.86rem;
+  font-weight: 600;
+  letter-spacing: 0.32em;
+}
+
+.brand p {
+  margin: 6px 0 0;
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  font-style: italic;
+  color: var(--muted);
+}
+
+.rooms {
+  display: flex;
+  gap: 6px;
+}
+
+.room {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 0 12px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-size: 0.82rem;
+  cursor: pointer;
+}
+
+.room:disabled { cursor: default; opacity: 0.5; }
+
+.room[aria-current="step"] {
+  border-color: var(--line);
+  background: rgb(255 255 255 / 0.5);
+  color: var(--ink);
+}
+
+/* Durum: boş halka (açık değil), içi dolu (çözüldü) — renge ek olarak biçim */
+.room-mark {
+  width: 10px;
+  height: 10px;
+  border: 1.5px solid currentColor;
+  border-radius: 50%;
+}
+
+.room[data-done="true"] .room-mark {
+  border-color: var(--ink);
+  background: var(--ink);
+}
+
+.room-name { white-space: nowrap; }
+
+/* ---------- Sahne ---------- */
+.stage {
+  position: relative;
+  min-height: 0;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.scene {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  touch-action: none; /* sürükleme yalnızca sahnede; sayfanın geri kalanı etkilenmez */
+  cursor: grab;
+}
+
+.scene:active { cursor: grabbing; }
+
+.scene:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: -2px;
+  border-radius: 18px;
+}
+
+.intro {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  width: min(90%, 520px);
+  text-align: center;
+  translate: -50% 0;
+  pointer-events: none;
+  transition: opacity 700ms var(--ease);
+}
+
+.intro.is-gone { opacity: 0; }
+
+.intro-line {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(1.25rem, 1rem + 1.4vw, 1.9rem);
+  font-style: italic;
+  line-height: 1.25;
+}
+
+.intro-hint {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
+.ghost {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  margin: 0;
+  padding: 8px 8px 6px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: rgb(242 237 228 / 0.9);
+  transition: opacity 400ms var(--ease);
+  pointer-events: none;
+}
+
+.ghost.is-fading { opacity: 0; }
+
+.ghost-frame canvas {
+  display: block;
+  width: clamp(110px, 18vw, 180px);
+  height: auto;
+  opacity: 0.8;
+}
+
+.ghost figcaption {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 0.72rem;
+  text-align: center;
+}
+
+.solved {
+  position: absolute;
+  left: 50%;
+  bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 18px;
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  background: var(--paper);
+  translate: -50% 0;
+  animation: settle 600ms var(--ease) both;
+}
+
+.solved p {
+  margin: 0;
+  white-space: nowrap;
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  font-style: italic;
+}
+
+.solved svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+@keyframes settle {
+  from { opacity: 0; transform: translateY(8px); }
+}
+
+.fallback {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 14px;
+  padding: 20px;
+  text-align: center;
+}
+
+.fallback img {
+  width: min(70vw, 360px);
+  height: auto;
+}
+
+.fallback p {
+  max-width: 44ch;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.finale {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 10px;
+  padding: 20px;
+  background: var(--paper);
+  text-align: center;
+  overflow: auto;
+}
+
+.finale h2 {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(1.6rem, 1.2rem + 2vw, 2.6rem);
+  font-weight: 400;
+  font-style: italic;
+  outline: none;
+}
+
+.finale > p {
+  margin: 0 0 8px;
+  color: var(--muted);
+}
+
+.thumbs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin: 6px 0 14px;
+  padding: 0;
+  list-style: none;
+}
+
+.thumbs li {
+  display: grid;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.thumbs canvas {
+  display: block;
+  width: clamp(120px, 22vw, 210px);
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+
+/* ---------- Kontroller ---------- */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px 20px;
+}
+
+.meter {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+.meter-track {
+  position: relative;
+  width: clamp(120px, 22vw, 220px);
+  height: 4px;
+  border-radius: 4px;
+  background: rgb(31 42 68 / 0.12);
+  overflow: hidden;
+}
+
+.meter-fill {
+  position: absolute;
+  inset: 0;
+  background: var(--ink);
+  transform-origin: left center;
+  transform: scaleX(0);
+  transition: transform 160ms linear;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.button {
+  min-height: 44px;
+  padding: 0 18px;
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: background-color 160ms var(--ease), color 160ms var(--ease);
+}
+
+.button:hover { background: rgb(31 42 68 / 0.06); }
+
+.button.primary {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.button.primary:hover { background: #2c3a5c; }
+
+.button:disabled { opacity: 0.45; cursor: default; }
+
+.button:focus-visible,
+.room:focus-visible,
+.link:focus-visible {
+  outline: 2px solid var(--coral);
+  outline-offset: 2px;
+}
+
+.save {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.link {
+  min-height: 36px;
+  padding: 0 4px;
+  border: 0;
+  background: none;
+  color: var(--ink);
+  font: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+/* Tamamlanma ekranında bulmaca kontrolleri gizlenir; kayıt kontrolü kalır */
+.controls.is-finale .meter,
+.controls.is-finale .buttons { visibility: hidden; }
+
+/* ---------- Dar ekran ---------- */
+@media (max-width: 640px) {
+  .app { padding-inline: 12px; gap: 8px; }
+  .top { flex-direction: column; gap: 8px; }
+  .rooms { width: 100%; justify-content: space-between; }
+  .room { padding: 0 8px; }
+  .controls { justify-content: center; }
+  .meter { width: 100%; justify-content: center; }
+  .buttons { width: 100%; justify-content: center; }
+  .button { flex: 1 1 auto; }
+  .save { width: 100%; justify-content: center; }
+  .intro { bottom: 10px; }
+  .solved { padding: 8px 14px; }
+  .solved p { font-size: 0.95rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .intro,
+  .ghost,
+  .meter-fill,
+  .button { transition: none; }
+  .solved { animation: none; }
+}

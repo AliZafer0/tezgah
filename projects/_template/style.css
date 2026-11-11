@@ -1,0 +1,62 @@
+:root {
+  color-scheme: dark;
+  --bg: #050608;
+  --ink: #e8eef5;
+  --dim: #6f7c89;
+  --glow: #a9dcff;
+}
+
+* { box-sizing: border-box; }
+
+html, body { height: 100%; margin: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font: 16px/1.5 system-ui, sans-serif;
+}
+
+.sketch {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 100%;
+  overflow: hidden;
+}
+
+.field {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  font: 14px/1.1 ui-monospace, monospace;
+  color: var(--dim);
+  white-space: pre;
+  overflow: hidden;
+}
+
+.field b {
+  font-weight: inherit;
+  color: var(--glow);
+  text-shadow: 0 0 12px var(--glow);
+}
+
+.label {
+  position: relative;
+  padding: 1.5rem 2rem;
+  text-align: center;
+  background: rgb(5 6 8 / 0.8);
+  border: 1px solid rgb(169 220 255 / 0.2);
+  border-radius: 14px;
+  animation: settle 900ms cubic-bezier(.2, .7, .2, 1) both;
+}
+
+h1 { margin: 0 0 .25rem; font-size: clamp(1.6rem, 5vw, 2.6rem); letter-spacing: -0.02em; }
+p { margin: 0; color: #98a5b3; }
+
+@keyframes settle {
+  from { opacity: 0; transform: translateY(8px) scale(.98); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .label { animation: none; }
+}

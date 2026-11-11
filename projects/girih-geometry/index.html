@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Girih — Sonsuz Geometri</title>
+  <meta name="description" content="Selçuklu ve Osmanlı yıldız desenlerini gerçek çizim yöntemiyle üreten etkileşimli bir geometri atölyesi.">
+  <meta name="theme-color" content="#13294a">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <div class="layout">
+    <svg id="desen" tabindex="0" role="img" aria-label="Girih deseni" aria-describedby="hint kbd-help" xmlns="http://www.w3.org/2000/svg"></svg>
+
+    <header class="head">
+      <h1>GİRİH</h1>
+      <p>Sonsuz geometri.</p>
+    </header>
+
+    <section class="panel" aria-label="Desen ayarları">
+      <fieldset>
+        <legend>Döşeme</legend>
+        <div class="seg seg5" id="tilings"></div>
+        <p class="hint" id="hint"></p>
+      </fieldset>
+
+      <div class="range">
+        <label for="angle">Temas açısı</label><output id="angle-out" for="angle"></output>
+        <input id="angle" type="range" min="12" max="84" step="0.5">
+      </div>
+      <div class="range">
+        <label for="delta">Kol aralığı</label><output id="delta-out" for="delta"></output>
+        <input id="delta" type="range" min="0" max="0.3" step="0.005">
+      </div>
+      <div class="range two">
+        <div>
+          <label for="scale">Ölçek</label><output id="scale-out" for="scale"></output>
+          <input id="scale" type="range" min="24" max="160" step="1">
+        </div>
+        <div>
+          <label for="width">Şerit</label><output id="width-out" for="width"></output>
+          <input id="width" type="range" min="1" max="12" step="0.5">
+        </div>
+      </div>
+
+      <fieldset>
+        <legend>Renk</legend>
+        <div class="themes" id="themes"></div>
+      </fieldset>
+
+      <div class="actions">
+        <button type="button" id="skeleton" aria-pressed="false">İskelet</button>
+        <button type="button" id="breathe" aria-pressed="false">Nefes</button>
+        <button type="button" id="random">Rastgele</button>
+        <button type="button" id="share">Bağlantı</button>
+        <button type="button" id="svg" class="primary">SVG indir</button>
+      </div>
+      <div class="sharebox" id="sharebox" hidden>
+        <label for="share-link" class="sr-only">Paylaşım bağlantısı</label>
+        <input id="share-link" type="text" readonly>
+      </div>
+      <p class="fine" id="kbd-help">Desenin üstünde sürükle: yatay açıyı, dikey kol aralığını değiştirir. Klavyede oklar aynı işi yapar.</p>
+    </section>
+  </div>
+  <p class="sr-only" id="status" aria-live="polite"></p>
+</body>
+</html>

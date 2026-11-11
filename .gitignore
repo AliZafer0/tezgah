@@ -1,0 +1,33 @@
+# Bağımlılıklar
+node_modules/
+
+# Derleme çıktıları ve önbellekler
+dist/
+.vite/
+.cache/
+projects/*/dist/
+projects/*/build/
+*.tsbuildinfo
+
+# Test çıktıları
+test-results/
+.e2e-artifacts/
+
+# Loglar
+*.log
+npm-debug.log*
+
+# Ortam ve sırlar (.env.example takip edilir)
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Editör ve sistem dosyaları
+.DS_Store
+Thumbs.db
+*.swp
+*~
+.idea/
+.vscode/

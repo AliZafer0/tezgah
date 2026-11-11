@@ -1,0 +1,11 @@
+{
+  "title": "Ebru — Suyun Üstünde",
+  "slug": "ebru-water",
+  "description": "Suyun üstünde boya: damla, serpme, biz, tarak ve gelgitle dijital ebru. Ebrunun matematiğiyle çalışan etkileşimli bir tekne.",
+  "tags": ["yaratıcı kodlama", "ebru", "etkileşim", "generatif sanat", "canvas"],
+  "status": "ready",
+  "cover": "cover.jpg",
+  "entry": "index.html",
+  "accent": "#2f4a7a",
+  "created": "2026-10-23"
+}

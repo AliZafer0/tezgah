@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Mira — Dijital Mimik</title>
+  <meta name="description" content="Binlerce karakterden oluşan, bakışları ve ifadeleri birlikte hareket eden etkileşimli bir dijital portre.">
+  <meta name="color-scheme" content="dark">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <div class="layout">
+    <canvas id="face" role="img" aria-label="0 ve 1 karakterlerinden oluşan, kahverengi gözlü, koyu saçlı yetişkin bir kadın portresi. Gözleri imleci izler; seçilen ifadeye göre kaşları, gözleri ve ağzı birlikte değişir."></canvas>
+    <img id="fallback" src="fallback.jpg" loading="lazy" alt="0 ve 1 karakterlerinden oluşan, kahverengi gözlü, koyu saçlı yetişkin bir kadın portresinin durağan görünümü." hidden>
+    <header class="head">
+      <h1>MIRA</h1>
+      <p>Bir yüz, binlerce işaret.</p>
+    </header>
+
+    <div class="face-area" aria-hidden="true"></div>
+
+    <section class="controls" aria-label="Portre kontrolleri">
+      <p class="note" id="note" role="status" hidden></p>
+      <fieldset class="live">
+        <legend class="sr-only">Portre ayarları</legend>
+        <fieldset class="exprs">
+          <legend>İfade</legend>
+          <div class="seg">
+            <label><input type="radio" name="expr" value="neutral" checked><span>Nötr</span></label>
+            <label><input type="radio" name="expr" value="smile"><span>Tebessüm</span></label>
+            <label><input type="radio" name="expr" value="curious"><span>Merak</span></label>
+            <label><input type="radio" name="expr" value="surprise"><span>Şaşkınlık</span></label>
+          </div>
+        </fieldset>
+
+        <div class="range">
+          <label for="intensity">İfade şiddeti</label>
+          <output id="intensity-out" for="intensity">%70</output>
+          <input id="intensity" type="range" min="0" max="100" step="1" value="70">
+        </div>
+
+        <div class="row">
+          <button type="button" id="track" aria-pressed="false">Takibi kilitle</button>
+          <button type="button" id="pause" aria-pressed="false">Duraklat</button>
+        </div>
+
+        <div class="row">
+          <label class="select">
+            <span>Kalite</span>
+            <select id="quality">
+              <option value="eco">Ekonomik</option>
+              <option value="balanced" selected>Dengeli</option>
+              <option value="high">Yüksek</option>
+            </select>
+          </label>
+          <button type="button" id="reset">Sıfırla</button>
+        </div>
+      </fieldset>
+    </section>
+  </div>
+
+  <p class="sr-only" id="announce" aria-live="polite"></p>
+</body>
+</html>

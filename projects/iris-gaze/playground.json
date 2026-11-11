@@ -1,0 +1,11 @@
+{
+  "title": "Iris — Dijital Bakış",
+  "slug": "iris-gaze",
+  "description": "Binlerce 0 ve 1’den oluşan, imleci takip eden veya kendi ritminde etrafa bakan kahverengi bir göz.",
+  "tags": ["yaratıcı kodlama", "etkileşim", "generatif sanat", "webgl"],
+  "status": "ready",
+  "cover": "cover.jpg",
+  "entry": "index.html",
+  "accent": "#b9752f",
+  "created": "2026-10-21"
+}

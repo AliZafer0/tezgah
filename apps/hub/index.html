@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="tr" data-scene="loading">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Tezgâh — Türk sanatlarından yaratıcı kod</title>
+  <meta name="description" content="CSS animasyonları, yaratıcı kodlama, 3D sahneler ve küçük araçlar için deney galerisi.">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#050608">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <script type="module" src="/src/main.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#galeri">Galeriye geç</a>
+
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="Tezgâh, ana sayfa">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+        <circle cx="16" cy="16" r="5.5" />
+        <ellipse cx="16" cy="16" rx="13" ry="5" transform="rotate(-28 16 16)" />
+        <ellipse cx="16" cy="16" rx="13" ry="5" transform="rotate(32 16 16)" />
+      </svg>
+      <span class="brand-word">tezgâh</span>
+    </a>
+    <nav class="topnav" aria-label="Ana gezinme">
+      <a href="#galeri">Galeri <span class="topnav-count" data-count></span></a>
+      <button type="button" class="topnav-search" data-action="focus-search" aria-keyshortcuts="/">
+        Ara <kbd aria-hidden="true">/</kbd>
+      </button>
+    </nav>
+  </header>
+
+  <main class="lab" id="main">
+    <div class="lab-content">
+      <section class="intro" aria-labelledby="intro-title">
+        <h1 id="intro-title" class="intro-title">Kod, ışık ve biçim üzerine küçük deneyler</h1>
+        <p class="intro-lede">CSS animasyonları, yaratıcı kodlama, 3D sahneler ve küçük araçlar. Bir deneyi seç, burada dene ya da kendi adresinde aç.</p>
+      </section>
+
+      <section class="gallery" id="galeri" aria-labelledby="gallery-title" tabindex="-1">
+        <div class="gallery-head">
+          <h2 id="gallery-title">Deneyler</h2>
+          <p class="result-count" role="status" aria-live="polite" data-result-count></p>
+        </div>
+
+        <div class="controls" data-controls hidden>
+          <label class="search">
+            <span class="visually-hidden">Başlık veya açıklamada ara</span>
+            <svg class="search-icon" viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5" /><path d="m13 13 4 4" /></svg>
+            <input type="search" id="search" name="q" placeholder="Başlık veya açıklamada ara" autocomplete="off" spellcheck="false" enterkeyhint="search">
+          </label>
+          <div class="tags" role="group" aria-label="Etikete göre filtrele" data-tags></div>
+        </div>
+
+        <details class="issues" data-issues hidden>
+          <summary data-issues-summary></summary>
+          <ul data-issues-list></ul>
+        </details>
+
+        <ul class="cards" role="list" data-cards aria-busy="true"></ul>
+
+        <div class="notice" data-no-results hidden>
+          <p class="notice-title">Bu aramayla eşleşen deney yok.</p>
+          <p>Aramayı değiştir ya da filtreleri temizle.</p>
+          <button type="button" class="button" data-action="clear-filters">Filtreleri temizle</button>
+        </div>
+
+        <div class="notice notice-empty" data-empty hidden>
+          <p class="notice-title">Henüz deney yok</p>
+          <p>İlk projeyi oluşturduğunda burada kendiliğinden görünecek.</p>
+          <div class="command">
+            <code data-command>npm run create:project -- ilk-deney</code>
+            <button type="button" class="button button-quiet" data-action="copy-command">Kopyala</button>
+          </div>
+        </div>
+
+        <div class="notice" data-load-error hidden>
+          <p class="notice-title">Proje listesi alınamadı.</p>
+          <p>Sunucunun çalıştığından emin ol ve yeniden dene.</p>
+          <button type="button" class="button" data-action="retry">Yeniden dene</button>
+        </div>
+      </section>
+
+      <footer class="foot">
+        <p>projects/ klasörüne eklenen her deney burada görünür.</p>
+      </footer>
+    </div>
+
+    <aside class="stage" aria-label="Sahne" data-stage>
+      <div class="stage-fallback" aria-hidden="true">
+        <svg viewBox="0 0 600 600" focusable="false">
+          <defs>
+            <radialGradient id="fb-core" cx="50%" cy="46%" r="50%">
+              <stop offset="0" stop-color="#eaf6ff" />
+              <stop offset="0.28" stop-color="#a9dcff" stop-opacity="0.9" />
+              <stop offset="0.62" stop-color="#5b6f9e" stop-opacity="0.35" />
+              <stop offset="1" stop-color="#050608" stop-opacity="0" />
+            </radialGradient>
+            <radialGradient id="fb-halo" cx="50%" cy="50%" r="50%">
+              <stop offset="0" stop-color="#a9dcff" stop-opacity="0.18" />
+              <stop offset="1" stop-color="#a9dcff" stop-opacity="0" />
+            </radialGradient>
+            <linearGradient id="fb-iris" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#a9dcff" />
+              <stop offset="0.5" stop-color="#c4b8ff" />
+              <stop offset="1" stop-color="#a3f0d9" />
+            </linearGradient>
+            <path id="fb-r1" d="M300,95 a205,205 0 1,1 -0.1,0" />
+            <path id="fb-r2" d="M300,150 a150,150 0 1,1 -0.1,0" />
+          </defs>
+          <circle cx="300" cy="300" r="290" fill="url(#fb-halo)" />
+          <ellipse class="fb-orbit" cx="300" cy="300" rx="250" ry="78" transform="rotate(-24 300 300)" stroke="url(#fb-iris)" />
+          <ellipse class="fb-orbit" cx="300" cy="300" rx="230" ry="96" transform="rotate(38 300 300)" stroke="url(#fb-iris)" />
+          <text class="fb-glyphs"><textPath href="#fb-r1">0 1 1 0 { } 0 1 0 0 1 &lt; / &gt; 1 0 1 1 0 ; 0 1 0 1 * 1 0 0 1 1 0 = 1 0 1 0 0 1 # 0 1 1 0 1 0 0 1 + 1 0 1</textPath></text>
+          <text class="fb-glyphs fb-glyphs-inner"><textPath href="#fb-r2">1 0 0 1 0 1 1 0 0 1 { 1 0 } 0 1 1 0 1 0 0 1 0 1 1 0 1 0 0 1 1 0</textPath></text>
+          <circle cx="300" cy="300" r="92" fill="url(#fb-core)" />
+        </svg>
+      </div>
+      <canvas class="stage-canvas" aria-hidden="true" data-canvas></canvas>
+      <div class="stage-caption">
+        <p class="stage-focus" aria-hidden="true" data-stage-focus></p>
+        <button type="button" class="motion-toggle" data-action="toggle-motion" aria-pressed="false" hidden>
+          <span data-motion-label>Hareketi durdur</span>
+        </button>
+      </div>
+    </aside>
+  </main>
+
+  <dialog class="chamber" aria-labelledby="chamber-title" data-chamber>
+    <div class="chamber-bar">
+      <button type="button" class="chamber-back" data-action="close-preview">
+        <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M12.5 4.5 7 10l5.5 5.5" /></svg>
+        Galeriye dön
+      </button>
+      <div class="chamber-id">
+        <h2 id="chamber-title" data-chamber-title></h2>
+        <span class="status-badge" data-chamber-status></span>
+      </div>
+      <div class="chamber-tools">
+        <div class="viewport-switch" role="radiogroup" aria-label="Önizleme genişliği" aria-describedby="viewport-note">
+          <button type="button" role="radio" aria-checked="true" data-viewport="full">Geniş</button>
+          <button type="button" role="radio" aria-checked="false" data-viewport="tablet">768 px</button>
+          <button type="button" role="radio" aria-checked="false" data-viewport="mobile">390 px</button>
+        </div>
+        <button type="button" class="icon-button" data-action="reload-preview" aria-label="Önizlemeyi yeniden yükle" title="Yeniden yükle">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M15.5 10a5.5 5.5 0 1 1-1.6-3.9" /><path d="M15.5 3.5v3.2h-3.2" /></svg>
+        </button>
+        <a class="icon-button" data-chamber-open target="_blank" rel="noopener" aria-label="Yeni sekmede aç" title="Yeni sekmede aç">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M11 4h5v5" /><path d="m16 4-7 7" /><path d="M14 12v3.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5H8" /></svg>
+        </a>
+      </div>
+    </div>
+    <p class="viewport-note" id="viewport-note" data-viewport-note>Dar seçenekler yalnızca çerçeve genişliğini değiştirir; cihaz, dokunma ve piksel oranı taklit edilmez.</p>
+    <div class="chamber-body">
+      <div class="frame" data-frame>
+        <iframe data-iframe title="Proje önizlemesi" referrerpolicy="no-referrer"></iframe>
+        <div class="frame-state" data-frame-state hidden>
+          <div class="frame-loading" data-frame-loading><span></span>Yükleniyor</div>
+          <div class="frame-error" data-frame-error hidden>
+            <p class="notice-title" data-frame-error-title>Önizleme açılamadı.</p>
+            <p data-frame-error-text></p>
+            <div class="frame-error-actions">
+              <button type="button" class="button" data-action="reload-preview">Yeniden dene</button>
+              <a class="button button-quiet" data-frame-error-open target="_blank" rel="noopener">Yeni sekmede aç</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </dialog>
+</body>
+</html>

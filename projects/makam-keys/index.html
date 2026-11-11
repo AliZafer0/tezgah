@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Makam Klavyesi</title>
+  <meta name="description" content="Hicaz, Rast, Uşşak, Sabâ… 53 komalı Türk müziği perdeleriyle çalan, makamın seyrini kendisi de gezinebilen bir klavye.">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#131016">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <main class="app">
+    <header class="top">
+      <div class="brand">
+        <h1>MAKAM</h1>
+        <p>53 komalı perdelerle çalan klavye.</p>
+      </div>
+      <div class="makams" role="radiogroup" aria-label="Makam" id="makams"></div>
+    </header>
+
+    <section class="stage">
+      <canvas id="halka" role="img" aria-label="Makamın 53 komalık oktav halkası üzerindeki perdeleri"></canvas>
+      <article class="info" aria-live="polite">
+        <h2 id="m-name"></h2>
+        <p class="parts" id="m-parts"></p>
+        <dl class="facts">
+          <div><dt>Karar</dt><dd id="m-karar"></dd></div>
+          <div><dt>Güçlü</dt><dd id="m-guclu"></dd></div>
+          <div><dt>Seyir</dt><dd id="m-seyir"></dd></div>
+        </dl>
+        <p class="steps" id="m-steps" aria-label="Aralıklar"></p>
+        <p class="note" id="m-note"></p>
+      </article>
+    </section>
+
+    <section class="keys" id="keys" aria-label="Perdeler: tıkla, dokun ya da klavyeden çal"></section>
+
+    <footer class="controls">
+      <div class="seg" role="radiogroup" aria-label="Tını">
+        <label><input type="radio" name="voice" value="ney" checked><span>Ney</span></label>
+        <label><input type="radio" name="voice" value="kanun"><span>Kanun</span></label>
+      </div>
+      <button type="button" id="drone" aria-pressed="false">Dem</button>
+      <button type="button" id="west" aria-pressed="false" title="Perdeleri 12 eşit sese (piyano akoruna) yuvarla">Batı akordu</button>
+      <button type="button" id="seyir" class="primary">Seyir çal</button>
+    </footer>
+    <p class="hint" id="hint">Klavye: A S D F G H J K L Ş İ , tuşları perdeleri çalar. Sol/sağ ok makam değiştirir, boşluk seyri başlatır.</p>
+  </main>
+  <p class="sr-only" id="status" aria-live="polite"></p>
+</body>
+</html>

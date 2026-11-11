@@ -1,0 +1,396 @@
+:root {
+  color-scheme: dark;
+  --obsidian: #060709;
+  --graphite: #111418;
+  --ink: #eef1f4;
+  --muted: #a3acb6;
+  --silver: rgb(214 222 230 / 0.55);
+  --amber: #f2a65a;
+  --amber-soft: #ffd59a;
+  --ice: #9fd8ff;
+  --line: rgb(214 222 230 / 0.14);
+  --glass: rgb(17 20 24 / 0.72);
+  --sans: "Avenir Next", "Segoe UI", system-ui, -apple-system, "DejaVu Sans", sans-serif;
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+* { box-sizing: border-box; }
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background:
+    radial-gradient(70% 60% at 50% 42%, rgb(40 52 66 / 0.35), transparent 70%),
+    var(--obsidian);
+  color: var(--ink);
+  font-family: var(--sans);
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+[hidden] { display: none !important; }
+
+.app {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  height: 100svh;
+  padding: max(18px, env(safe-area-inset-top)) 16px max(14px, env(safe-area-inset-bottom));
+  gap: 8px;
+}
+
+/* ---------- Başlık ---------- */
+.head h1 {
+  margin: 0;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.42em;
+}
+
+.head p {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+/* ---------- Sahne ---------- */
+.stage {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 0;
+  container-type: size;
+}
+
+.orbit {
+  position: relative;
+  width: min(96cqmin, 760px);
+  aspect-ratio: 1;
+  container-type: inline-size;
+  /* Hafif perspektif: düğmeler aynı dönüşümü paylaştığından dokunma hassasiyeti korunur */
+  transform: perspective(1800px) rotateX(9deg);
+}
+
+.orbit-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.grid,
+.ring-row {
+  position: absolute;
+  inset: 0;
+}
+
+.ring-row { pointer-events: none; }
+
+.cell {
+  position: absolute;
+  width: clamp(24px, 7.4cqw, 44px);
+  height: clamp(24px, 7.4cqw, 44px);
+  translate: -50% -50%;
+  pointer-events: auto;
+}
+
+.note {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Kapalı nota: içi boş ince halka. Açık nota: dolu, ışıklı disk (renge ek olarak biçim farkı). */
+.note::before {
+  content: "";
+  width: 30%;
+  height: 30%;
+  border: 1.5px solid var(--silver);
+  border-radius: 50%;
+  background: transparent;
+  transition: transform 180ms var(--ease), background-color 180ms var(--ease), border-color 180ms var(--ease), box-shadow 180ms var(--ease);
+}
+
+.note:hover::before {
+  border-color: var(--ink);
+  transform: scale(1.25);
+}
+
+.note[aria-pressed="true"]::before {
+  width: 46%;
+  height: 46%;
+  border: 2px solid rgb(255 255 255 / 0.85);
+  background: var(--c);
+  box-shadow: 0 0 10px 1px color-mix(in srgb, var(--c) 70%, transparent);
+}
+
+.note:focus-visible {
+  outline: 2px solid var(--ice);
+  outline-offset: -2px;
+}
+
+.hint {
+  position: absolute;
+  top: 2px;
+  left: 50%;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.86rem;
+  white-space: nowrap;
+  translate: -50% 0;
+  transition: opacity 500ms var(--ease);
+}
+
+.hint.is-gone { opacity: 0; }
+
+.legend {
+  position: absolute;
+  left: 0;
+  bottom: 4px;
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.legend li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.swatch {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--c);
+  box-shadow: 0 0 6px var(--c);
+}
+
+/* ---------- Panel ---------- */
+.panel {
+  display: grid;
+  gap: 10px;
+  width: min(940px, 100%);
+  margin: 0 auto;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--glass);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 18px;
+}
+
+.control {
+  display: flex;
+  flex: 1 1 200px;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.control label {
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.control output {
+  min-width: 4.6em;
+  font-size: 0.82rem;
+  font-variant-numeric: tabular-nums;
+}
+
+input[type="range"] {
+  --fill: 50%;
+  flex: 1;
+  min-width: 70px;
+  height: 32px;
+  margin: 0;
+  background: transparent;
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--amber) var(--fill), rgb(214 222 230 / 0.2) var(--fill));
+}
+
+input[type="range"]::-moz-range-track { height: 2px; background: rgb(214 222 230 / 0.2); }
+input[type="range"]::-moz-range-progress { height: 2px; background: var(--amber); }
+
+input[type="range"]::-webkit-slider-thumb {
+  width: 16px;
+  height: 16px;
+  margin-top: -7px;
+  border-radius: 50%;
+  background: var(--ink);
+  -webkit-appearance: none;
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--ink);
+}
+
+input[type="range"]:focus-visible { outline: none; }
+input[type="range"]:focus-visible::-webkit-slider-thumb { box-shadow: 0 0 0 3px var(--obsidian), 0 0 0 5px var(--ice); }
+input[type="range"]:focus-visible::-moz-range-thumb { box-shadow: 0 0 0 3px var(--obsidian), 0 0 0 5px var(--ice); }
+
+button { font: inherit; color: inherit; }
+
+.play,
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 0 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgb(214 222 230 / 0.05);
+  font-size: 0.84rem;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 160ms var(--ease), border-color 160ms var(--ease), color 160ms var(--ease);
+}
+
+.chip:hover { background: rgb(214 222 230 / 0.1); }
+
+.chip[aria-pressed="true"] {
+  border-color: var(--ice);
+  background: rgb(159 216 255 / 0.14);
+  color: #fff;
+}
+
+.play {
+  min-width: 120px;
+  justify-content: center;
+  border-color: transparent;
+  background: var(--amber);
+  color: #1b1208;
+  font-weight: 600;
+}
+
+.play:hover { background: var(--amber-soft); }
+
+.play svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.play [data-icon="pause"] { fill: none; }
+
+.play:focus-visible,
+.chip:focus-visible {
+  outline: 2px solid var(--ice);
+  outline-offset: 2px;
+}
+
+.presets,
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.actions { margin-left: auto; }
+
+.share-fallback {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.share-fallback label {
+  color: var(--muted);
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.share-fallback input {
+  flex: 1;
+  min-width: 0;
+  min-height: 36px;
+  padding: 0 10px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--obsidian);
+  color: var(--ink);
+  font: 0.8rem ui-monospace, monospace;
+}
+
+.status {
+  min-height: 1.2em;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.status:empty { display: none; }
+
+/* ---------- Dar ekran ---------- */
+@media (max-width: 640px) {
+  .app { padding-inline: 10px; gap: 6px; }
+  .orbit { transform: perspective(1600px) rotateX(6deg); }
+  .legend {
+    position: static;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px 12px;
+    align-self: end;
+  }
+  .stage { grid-template-rows: minmax(0, 1fr) auto; }
+  .hint { top: 0; font-size: 0.8rem; }
+  .panel { padding: 10px; gap: 8px; border-radius: 18px; }
+  .row { gap: 8px; }
+  .play { min-width: 104px; }
+  .control { flex-basis: 100%; }
+  .actions { margin-left: 0; }
+  .chip { padding: 0 11px; min-height: 38px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .note::before,
+  .hint { transition: none; }
+}

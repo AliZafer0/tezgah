@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Orbit — Yörünge Enstrümanı</title>
+  <meta name="description" content="Noktalardan ritim, yörüngelerden müzik üreten etkileşimli bir enstrüman.">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#060709">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="script.js"></script>
+</head>
+<body>
+  <main class="app">
+    <header class="head">
+      <h1>ORBIT</h1>
+      <p>Yörüngeni bestele.</p>
+    </header>
+
+    <section class="stage" aria-label="Enstrüman">
+      <div class="orbit" data-orbit>
+        <canvas class="orbit-canvas" aria-hidden="true" data-orbit-canvas></canvas>
+        <div class="grid" role="grid" aria-label="Yörünge notaları" aria-describedby="grid-help" data-grid></div>
+      </div>
+      <p class="hint" data-hint>Noktalara dokun, kendi yörüngeni bestele.</p>
+      <p id="grid-help" class="visually-hidden">Ok tuşlarıyla adımlar arasında gez; yukarı ve aşağı oklar halkayı değiştirir. Boşluk ya da Enter notayı açar veya kapatır.</p>
+      <ul class="legend" aria-label="Halkalar, içten dışa">
+        <li style="--c: #e8873a"><span class="swatch" aria-hidden="true"></span>Bas</li>
+        <li style="--c: #ffd59a"><span class="swatch" aria-hidden="true"></span>Synth</li>
+        <li style="--c: #9fd8ff"><span class="swatch" aria-hidden="true"></span>Zil</li>
+        <li style="--c: #dfe8f1"><span class="swatch" aria-hidden="true"></span>Perküsyon</li>
+      </ul>
+    </section>
+
+    <section class="panel" aria-label="Kontroller">
+      <div class="row">
+        <button type="button" class="play" data-action="play">
+          <svg viewBox="0 0 20 20" aria-hidden="true" data-icon="play"><path d="M6.5 4.5v11l9-5.5z" /></svg>
+          <svg viewBox="0 0 20 20" aria-hidden="true" data-icon="pause" hidden><path d="M7 4.5v11M13 4.5v11" /></svg>
+          <span data-play-label>Başlat</span>
+        </button>
+        <div class="control">
+          <label for="bpm">Tempo</label>
+          <input id="bpm" type="range" min="60" max="140" step="1" value="100" data-bpm>
+          <output for="bpm" data-bpm-out>100 BPM</output>
+        </div>
+        <div class="control">
+          <label for="volume">Ses</label>
+          <input id="volume" type="range" min="0" max="100" step="1" value="55" data-volume>
+          <button type="button" class="chip" data-action="mute" aria-pressed="false">Sessiz</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="presets" role="group" aria-label="Hazır örüntüler" data-presets>
+          <button type="button" class="chip" data-preset="sakin" aria-pressed="false">Sakin</button>
+          <button type="button" class="chip" data-preset="akis" aria-pressed="false">Akış</button>
+          <button type="button" class="chip" data-preset="gece" aria-pressed="false">Gece</button>
+        </div>
+        <div class="actions">
+          <button type="button" class="chip" data-action="inspire">İlham ver</button>
+          <button type="button" class="chip" data-action="clear">Temizle</button>
+          <button type="button" class="chip" data-action="share">Bağlantıyı kopyala</button>
+        </div>
+      </div>
+      <div class="share-fallback" data-share-fallback hidden>
+        <label for="share-link">Paylaşım bağlantısı</label>
+        <input id="share-link" type="text" readonly data-share-link>
+      </div>
+      <p class="status" role="status" aria-live="polite" data-status></p>
+    </section>
+  </main>
+</body>
+</html>

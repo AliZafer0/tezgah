@@ -1,0 +1,12 @@
+{
+  "title": "Girih — Sonsuz Geometri",
+  "slug": "girih-geometry",
+  "description": "Selçuklu ve Osmanlı yıldız desenlerini gerçek çizim yöntemiyle (temas eden çokgenler) üreten, açısıyla oynanabilen bir geometri atölyesi.",
+  "tags": ["yaratıcı kodlama", "geometri", "etkileşim", "generatif sanat", "svg"],
+  "status": "ready",
+  "cover": "cover.jpg",
+  "entry": "index.html",
+  "accent": "#1f4e8c",
+  "permissions": ["clipboard-write"],
+  "created": "2026-11-11"
+}

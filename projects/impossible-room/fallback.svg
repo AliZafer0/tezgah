@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 420" width="420" height="420" role="img" aria-label="İmkânsız üçgen">
+  <rect width="420" height="420" fill="#f2ede4"/>
+  <polygon points="62.8,180.0 305.3,320.0 357.2,290.0 114.7,150.0" fill="#d96950" stroke="#d96950" stroke-width="0.6" stroke-linejoin="round"/>
+  <polygon points="305.3,380.0 305.3,320.0 62.8,180.0 62.8,240.0" fill="#8d4434" stroke="#8d4434" stroke-width="0.6" stroke-linejoin="round"/>
+  <polygon points="305.3,380.0 357.2,350.0 357.2,290.0 305.3,320.0" fill="#a5503d" stroke="#a5503d" stroke-width="0.6" stroke-linejoin="round"/>
+  <polygon points="305.3,320.0 305.3,100.0 253.3,70.0 253.3,290.0" fill="#8d4434" stroke="#8d4434" stroke-width="0.6" stroke-linejoin="round"/>
+  <polygon points="305.3,320.0 357.2,290.0 357.2,70.0 305.3,100.0" fill="#a5503d" stroke="#a5503d" stroke-width="0.6" stroke-linejoin="round"/>
+  <polygon points="253.3,70.0 305.3,100.0 357.2,70.0 305.3,40.0" fill="#d96950" stroke="#d96950" stroke-width="0.6" stroke-linejoin="round"/>
+  <polygon points="62.8,180.0 114.7,210.0 305.3,100.0 253.3,70.0" fill="#d96950" stroke="#d96950" stroke-width="0.6" stroke-linejoin="round"/>
+  <polygon points="114.7,270.0 305.3,160.0 305.3,100.0 114.7,210.0" fill="#a5503d" stroke="#a5503d" stroke-width="0.6" stroke-linejoin="round"/>
+  <polygon points="114.7,270.0 114.7,210.0 62.8,180.0 62.8,240.0" fill="#8d4434" stroke="#8d4434" stroke-width="0.6" stroke-linejoin="round"/>
+</svg>

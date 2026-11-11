@@ -1,0 +1,11 @@
+{
+  "title": "Impossible Room — Perspektif Odası",
+  "slug": "impossible-room",
+  "description": "Dağınık mimari parçaları doğru bakış açısıyla birleştiren üç boyutlu bir perspektif bulmacası.",
+  "tags": ["3d", "bulmaca", "perspektif", "etkileşim"],
+  "status": "ready",
+  "cover": "cover.jpg",
+  "entry": "index.html",
+  "accent": "#e36c52",
+  "created": "2026-10-21"
+}

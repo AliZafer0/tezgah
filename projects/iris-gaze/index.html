@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="tr" data-mode="loading">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Iris — Dijital Bakış</title>
+  <meta name="description" content="Binlerce 0 ve 1’den oluşan, imleci takip eden veya kendi ritminde etrafa bakan kahverengi bir göz.">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#030303">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="script.js"></script>
+</head>
+<body>
+  <main class="piece">
+    <canvas class="scene" tabindex="0" role="img" data-canvas
+      aria-label="0 ve 1 karakterlerinden oluşan, etrafa bakan büyük kahverengi bir göz."
+      aria-describedby="keys-help"></canvas>
+
+    <picture class="fallback" data-fallback hidden>
+      <source media="(orientation: portrait)" data-srcset="fallback-tall.jpg">
+      <img data-src="fallback-wide.jpg" alt="0 ve 1 karakterlerinden oluşan kahverengi bir gözün durağan görüntüsü.">
+    </picture>
+
+    <header class="title">
+      <h1>IRIS</h1>
+      <p>Kodun içinden bir bakış.</p>
+    </header>
+
+    <p class="mode" data-mode-label>
+      <span class="mode-dot" aria-hidden="true"></span>
+      <span data-mode-text>İmleç takibi</span>
+      <span class="mode-paused" data-paused-text hidden>Duraklatıldı</span>
+    </p>
+
+    <p class="hint" data-hint>Bakışını yönlendir. Takibi kilitle, kendi yoluna baksın.</p>
+    <p id="keys-help" class="visually-hidden">Göze odaklanıp ok tuşlarıyla bakışı yönlendirebilirsin.</p>
+    <p class="fallback-note" data-fallback-note hidden>Bu cihazda WebGL açılamadı; gözün durağan hâli gösteriliyor. Bakış ve takip kullanılamıyor.</p>
+
+    <nav class="controls" aria-label="Göz kontrolleri" data-controls>
+      <button type="button" data-action="lock" aria-pressed="false">
+        <svg viewBox="0 0 20 20" aria-hidden="true"><rect x="4.5" y="9" width="11" height="8" rx="2" /><path d="M7 9V6.5a3 3 0 0 1 6 0V9" data-shackle /></svg>
+        <span>Takibi kilitle</span>
+      </button>
+      <button type="button" data-action="pause">
+        <svg viewBox="0 0 20 20" aria-hidden="true" data-icon="pause"><path d="M7.5 5v10M12.5 5v10" /></svg>
+        <svg viewBox="0 0 20 20" aria-hidden="true" data-icon="play" hidden><path d="M7 4.8v10.4l8.5-5.2z" /></svg>
+        <span data-pause-label>Hareketi duraklat</span>
+      </button>
+      <button type="button" data-action="restart">
+        <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10a5.5 5.5 0 1 0 1.7-4" /><path d="M4.5 3.5V7H8" /></svg>
+        <span>Baştan başlat</span>
+      </button>
+    </nav>
+
+    <p class="visually-hidden" role="status" aria-live="polite" data-announce></p>
+  </main>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Impossible Room — Perspektif Odası</title>
+  <meta name="description" content="Dağınık mimari parçaları doğru bakış açısıyla birleştiren üç boyutlu bir perspektif bulmacası.">
+  <meta name="theme-color" content="#f2ede4">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="script.js"></script>
+</head>
+<body>
+  <main class="app">
+    <header class="top">
+      <div class="brand">
+        <h1>IMPOSSIBLE ROOM</h1>
+        <p>Perspektif Odası</p>
+      </div>
+      <nav class="rooms" aria-label="Odalar" data-rooms></nav>
+    </header>
+
+    <section class="stage" aria-label="Sahne" data-stage>
+      <canvas class="scene" tabindex="0" role="application" aria-roledescription="üç boyutlu sahne"
+        aria-label="Perspektif odası" aria-describedby="keys-help" data-canvas></canvas>
+
+      <div class="intro" data-intro>
+        <p class="intro-line">Bazen çözüm, baktığın yerdedir.</p>
+        <p class="intro-hint">Bakış açını değiştirmek için sürükle.</p>
+      </div>
+
+      <figure class="ghost" data-ghost hidden>
+        <div class="ghost-frame" data-ghost-image></div>
+        <figcaption>Hedef siluet</figcaption>
+      </figure>
+
+      <div class="solved" data-solved hidden>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" /><path d="m7.5 12.5 3 3 6-7" /></svg>
+        <p>Perspektif tamamlandı.</p>
+      </div>
+
+      <div class="fallback" data-fallback hidden>
+        <img src="fallback.svg" alt="Doğru açıdan bakıldığında kesintisiz görünen imkânsız bir üçgenin çizimi." width="420" height="420">
+        <p>Bu cihazda 3D sahne açılamadı. Bulmaca WebGL gerektirdiği için şu an oynanamıyor; çizim, odaların fikrini gösteriyor.</p>
+      </div>
+
+      <section class="finale" aria-labelledby="finale-title" data-finale hidden>
+        <h2 id="finale-title" tabindex="-1">Üç oda tamamlandı.</h2>
+        <p>Her biri yalnızca tek bir bakıştan bütündü.</p>
+        <ul class="thumbs" data-thumbs></ul>
+        <button type="button" class="button primary" data-action="replay">Yeniden keşfet</button>
+      </section>
+    </section>
+
+    <p id="keys-help" class="visually-hidden">Sahneye odaklanıp ok tuşlarıyla bakış açısını değiştir. Shift ile daha ince ayar yaparsın.</p>
+
+    <footer class="controls" data-controls>
+      <div class="meter">
+        <span id="meter-label">Hizalama</span>
+        <div class="meter-track" role="progressbar" aria-labelledby="meter-label" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" data-meter>
+          <span class="meter-fill" data-meter-fill></span>
+        </div>
+      </div>
+      <div class="buttons">
+        <button type="button" class="button" data-action="hint">İpucu</button>
+        <button type="button" class="button" data-action="reset">Bakışı sıfırla</button>
+        <button type="button" class="button primary" data-action="next" hidden>Sonraki oda</button>
+      </div>
+      <div class="save">
+        <span class="save-note" data-save-note></span>
+        <button type="button" class="link" data-action="clear-save">Kaydı temizle</button>
+      </div>
+    </footer>
+
+    <p class="visually-hidden" role="status" aria-live="polite" data-announce></p>
+  </main>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Kamış Kalem</title>
+  <meta name="description" content="Hattatın düz uçlu kamış kalemiyle aharlı kâğıda yazı: kalın-ince geçişler, kuruyan kalem, nokta ölçüsü ve yazılışı yeniden izleme.">
+  <meta name="theme-color" content="#efe3c6">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <div class="layout">
+    <div class="sheet" id="sheet">
+      <canvas id="paper" aria-hidden="true"></canvas>
+      <canvas id="ink" tabindex="0" role="img" aria-label="Aharlı kâğıt: kamış kalemle yazı alanı" aria-describedby="hint"></canvas>
+    </div>
+
+    <header class="head">
+      <h1>KAMIŞ KALEM</h1>
+      <p>Aharlı kâğıda, düz uçla.</p>
+    </header>
+
+    <section class="panel" aria-label="Kalem ve kâğıt">
+      <fieldset>
+        <legend>Mürekkep</legend>
+        <div class="swatches" id="inks"></div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Kâğıt</legend>
+        <div class="seg seg3">
+          <label><input type="radio" name="paper" value="ahar" checked><span>Aharlı</span></label>
+          <label><input type="radio" name="paper" value="kahve"><span>Kahve</span></label>
+          <label><input type="radio" name="paper" value="lacivert"><span>Lacivert</span></label>
+        </div>
+      </fieldset>
+
+      <div class="nibrow">
+        <canvas id="nib" width="64" height="64" aria-hidden="true"></canvas>
+        <div class="ranges">
+          <div class="range">
+            <label for="width">Kalem</label><output id="width-out" for="width"></output>
+            <input id="width" type="range" min="6" max="60" value="24">
+          </div>
+          <div class="range">
+            <label for="angle">Kat açısı</label><output id="angle-out" for="angle"></output>
+            <input id="angle" type="range" min="0" max="90" value="38">
+          </div>
+        </div>
+      </div>
+
+      <div class="inkrow">
+        <div class="meter" role="meter" aria-label="Kalemdeki mürekkep" aria-valuemin="0" aria-valuemax="100" id="meter"><span id="meter-fill"></span></div>
+        <button type="button" id="dip">Hokkaya bandır</button>
+      </div>
+      <label class="check"><input type="checkbox" id="autodip" checked> Her harften sonra bandır</label>
+
+      <div class="actions">
+        <button type="button" id="guides" aria-pressed="true">Satır rehberi</button>
+        <button type="button" id="replay">Yazılışı izle</button>
+        <button type="button" id="warmup">Isınma örneği</button>
+        <button type="button" id="undo" disabled>Geri al</button>
+        <button type="button" id="clear">Temizle</button>
+        <button type="button" id="png" class="primary">PNG indir</button>
+      </div>
+      <p class="hint" id="hint">Kâğıda yaz: kalın ve ince çizgiler kalemin açısından doğar. Bir yerde bastırıp çekince hattatın “nokta”sı çıkar.</p>
+    </section>
+  </div>
+  <p class="sr-only" id="status" aria-live="polite"></p>
+</body>
+</html>

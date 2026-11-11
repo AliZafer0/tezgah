@@ -1,0 +1,11 @@
+{
+  "title": "Mira — Dijital Mimik",
+  "slug": "mira-face",
+  "description": "Binlerce karakterden oluşan, bakışları ve ifadeleri birlikte hareket eden etkileşimli bir dijital portre.",
+  "tags": ["yaratıcı kodlama", "karakter animasyonu", "etkileşim", "WebGL"],
+  "status": "ready",
+  "cover": "cover.jpg",
+  "entry": "index.html",
+  "accent": "#c8875e",
+  "created": "2026-10-21"
+}

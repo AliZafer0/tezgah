@@ -1,0 +1,239 @@
+:root {
+  color-scheme: dark;
+  --void: #030303;
+  --ink: #efe7dc;
+  --muted: #a99d8f;
+  --amber: #d79a4a;
+  --line: rgb(239 231 220 / 0.14);
+  --glass: rgb(12 9 7 / 0.62);
+  --sans: "Avenir Next", "Segoe UI", system-ui, -apple-system, "DejaVu Sans", sans-serif;
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "DejaVu Serif", serif;
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+* { box-sizing: border-box; }
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  background: var(--void);
+  color: var(--ink);
+  font-family: var(--sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+[hidden] { display: none !important; }
+
+.piece {
+  position: fixed;
+  inset: 0;
+}
+
+.scene {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  touch-action: none; /* dokunarak bakış hedefi; yalnızca sahnede */
+  outline: none;
+}
+
+.scene:focus-visible { box-shadow: inset 0 0 0 2px rgb(215 154 74 / 0.7); }
+
+.fallback {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+}
+
+.fallback img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.title {
+  position: absolute;
+  top: max(24px, env(safe-area-inset-top));
+  left: max(26px, env(safe-area-inset-left));
+  pointer-events: none;
+}
+
+.title h1 {
+  margin: 0;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.5em;
+}
+
+.title p {
+  margin: 8px 0 0;
+  font-family: var(--serif);
+  font-size: 1rem;
+  font-style: italic;
+  color: var(--muted);
+}
+
+.mode {
+  position: absolute;
+  top: max(24px, env(safe-area-inset-top));
+  right: max(26px, env(safe-area-inset-right));
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.8rem;
+  pointer-events: none;
+}
+
+.mode-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--amber);
+}
+
+[data-gaze="free"] .mode-dot {
+  background: transparent;
+  box-shadow: inset 0 0 0 1.5px var(--amber);
+}
+
+.mode-paused {
+  padding: 2px 8px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+}
+
+.hint {
+  position: absolute;
+  left: 50%;
+  bottom: calc(max(18px, env(safe-area-inset-bottom)) + 66px);
+  width: max-content;
+  max-width: calc(100% - 32px);
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+  text-align: center;
+  translate: -50% 0;
+  transition: opacity 700ms var(--ease);
+  pointer-events: none;
+}
+
+.hint.is-gone { opacity: 0; }
+
+.fallback-note {
+  position: absolute;
+  left: 50%;
+  bottom: max(24px, env(safe-area-inset-bottom));
+  width: min(480px, calc(100% - 32px));
+  margin: 0;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: var(--glass);
+  color: var(--ink);
+  font-size: 0.84rem;
+  text-align: center;
+  translate: -50% 0;
+}
+
+.controls {
+  position: absolute;
+  left: 50%;
+  bottom: max(18px, env(safe-area-inset-bottom));
+  display: flex;
+  gap: 2px;
+  padding: 5px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  translate: -50% 0;
+}
+
+.controls button {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 40px;
+  padding: 0 14px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.82rem;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 180ms var(--ease);
+}
+
+.controls button:hover { background: rgb(239 231 220 / 0.08); }
+
+.controls button:focus-visible {
+  outline: 2px solid var(--amber);
+  outline-offset: 1px;
+}
+
+.controls button[aria-pressed="true"] {
+  background: rgb(215 154 74 / 0.18);
+  color: #fff3e2;
+}
+
+.controls svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.controls [data-icon="play"] { fill: currentColor; stroke: none; }
+
+/* Kilitliyken kilit halkası kapanır (renge ek olarak biçim farkı) */
+[aria-pressed="false"] [data-shackle] { transform: translate(3.2px, -1.2px) rotate(18deg); transform-origin: 13px 9px; }
+
+[data-mode="fallback"] .scene,
+[data-mode="fallback"] .controls,
+[data-mode="fallback"] .hint,
+[data-mode="fallback"] .mode { display: none; }
+
+[data-still] .title,
+[data-still] .controls,
+[data-still] .hint,
+[data-still] .mode { display: none; }
+
+@media (max-width: 560px) {
+  .title { top: max(16px, env(safe-area-inset-top)); left: max(16px, env(safe-area-inset-left)); }
+  .mode { top: auto; right: auto; left: 50%; bottom: calc(max(14px, env(safe-area-inset-bottom)) + 58px); translate: -50% 0; }
+  .hint { bottom: calc(max(14px, env(safe-area-inset-bottom)) + 86px); font-size: 0.78rem; }
+  .controls { bottom: max(14px, env(safe-area-inset-bottom)); width: calc(100% - 20px); justify-content: space-between; }
+  .controls button { padding: 0 9px; font-size: 0.76rem; gap: 5px; }
+}
+
+@media (max-width: 400px) {
+  .controls svg { display: none; }
+  .controls button { padding: 0 8px; font-size: 0.74rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hint,
+  .controls button { transition: none; }
+}

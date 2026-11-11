@@ -1,0 +1,12 @@
+{
+  "title": "Orbit — Yörünge Enstrümanı",
+  "slug": "orbit-sequencer",
+  "description": "Noktalardan ritim, yörüngelerden müzik üreten etkileşimli bir enstrüman.",
+  "tags": ["müzik", "etkileşim", "web audio", "yaratıcı kodlama"],
+  "status": "ready",
+  "cover": "cover.jpg",
+  "entry": "index.html",
+  "accent": "#f2a65a",
+  "permissions": ["autoplay", "clipboard-write"],
+  "created": "2026-10-21"
+}

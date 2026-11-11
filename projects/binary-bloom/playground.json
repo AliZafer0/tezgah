@@ -1,0 +1,11 @@
+{
+  "title": "Binary Bloom",
+  "slug": "binary-bloom",
+  "description": "0 ve 1’lerden filizlenen, etkileşimli üç boyutlu bir gül.",
+  "tags": ["3d", "yaratıcı kodlama", "etkileşim", "generatif sanat"],
+  "status": "ready",
+  "cover": "cover.jpg",
+  "entry": "index.html",
+  "accent": "#d21f4a",
+  "created": "2026-10-21"
+}

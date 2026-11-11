@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Ebru — Suyun Üstünde</title>
+  <meta name="description" content="Suyun üstünde boya: damla, serpme, biz, tarak ve gelgitle dijital ebru. Ebrunun matematiğiyle çalışan etkileşimli bir tekne.">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <div class="layout">
+    <canvas id="tekne" tabindex="0" role="img" aria-label="Ebru teknesi" aria-describedby="hint kbd-help"></canvas>
+
+    <header class="head">
+      <h1>EBRU</h1>
+      <p>Suyun üstünde mürekkep.</p>
+    </header>
+
+    <section class="panel" aria-label="Ebru araçları">
+      <fieldset>
+        <legend>Araç</legend>
+        <div class="seg tools">
+          <label><input type="radio" name="tool" value="damla" checked><span>Damla</span></label>
+          <label><input type="radio" name="tool" value="serpme"><span>Serpme</span></label>
+          <label><input type="radio" name="tool" value="biz"><span>Biz</span></label>
+          <label><input type="radio" name="tool" value="tarak"><span>Tarak</span></label>
+          <label><input type="radio" name="tool" value="gelgit"><span>Gelgit</span></label>
+          <label><input type="radio" name="tool" value="girdap"><span>Girdap</span></label>
+        </div>
+        <p class="hint" id="hint">Suya dokun: boya damlası yüzeyi iter.</p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Boya</legend>
+        <div class="swatches">
+          <label title="Çivit"><input type="radio" name="renk" value="civit" checked><span style="--c:#2f4a7a"></span><b class="sr-only">Çivit</b></label>
+          <label title="Lahor mavisi"><input type="radio" name="renk" value="lahor"><span style="--c:#4f6fa3"></span><b class="sr-only">Lahor mavisi</b></label>
+          <label title="Toprak sarısı"><input type="radio" name="renk" value="toprak"><span style="--c:#c99a3c"></span><b class="sr-only">Toprak sarısı</b></label>
+          <label title="Al"><input type="radio" name="renk" value="al"><span style="--c:#9e3b2e"></span><b class="sr-only">Al</b></label>
+          <label title="Gül kurusu"><input type="radio" name="renk" value="gul"><span style="--c:#c48b86"></span><b class="sr-only">Gül kurusu</b></label>
+          <label title="Zeytin yeşili"><input type="radio" name="renk" value="zeytin"><span style="--c:#6f7a3e"></span><b class="sr-only">Zeytin yeşili</b></label>
+          <label title="İs siyahı"><input type="radio" name="renk" value="is"><span style="--c:#2b2724"></span><b class="sr-only">İs siyahı</b></label>
+          <label title="Üstübeç beyazı"><input type="radio" name="renk" value="ustubec"><span style="--c:#f2ece0"></span><b class="sr-only">Üstübeç beyazı</b></label>
+        </div>
+      </fieldset>
+
+      <div class="range">
+        <label for="size">Fırça</label><output id="size-out" for="size">40 px</output>
+        <input id="size" type="range" min="8" max="110" value="40">
+      </div>
+
+      <fieldset>
+        <legend>Desen</legend>
+        <div class="row4">
+          <button type="button" data-desen="battal">Battal</button>
+          <button type="button" data-desen="gelgit">Gelgit</button>
+          <button type="button" data-desen="tarakli">Taraklı</button>
+          <button type="button" data-desen="lale">Lale</button>
+        </div>
+      </fieldset>
+
+      <div class="row2">
+        <button type="button" id="undo" disabled>Geri al</button>
+        <button type="button" id="clear">Temizle</button>
+        <button type="button" id="sound" aria-pressed="false">Ses: kapalı</button>
+        <button type="button" id="print" class="primary">Kâğıda bas</button>
+      </div>
+      <p class="fine" id="kbd-help">Klavye: tekneye odaklanıp oklarla imleci taşı, Enter ile uygula; Biz için Shift + oklar.</p>
+    </section>
+  </div>
+  <p class="sr-only" id="status" aria-live="polite"></p>
+</body>
+</html>

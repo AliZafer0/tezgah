@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Kilim — Dijital Tezgâh</title>
+  <meta name="description" content="Elibelinde, koçboynuzu, kurt izi: Anadolu kilim motifleriyle ilmek ilmek dokunan, paylaşılabilir bir dijital tezgâh.">
+  <meta name="theme-color" content="#231c18">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <div class="layout">
+    <canvas id="tezgah" tabindex="0" role="img" aria-label="Kilim tezgâhı" aria-describedby="hint kbd-help"></canvas>
+
+    <header class="head">
+      <h1>KİLİM</h1>
+      <p>İlmek ilmek, dile gelen motifler.</p>
+    </header>
+
+    <section class="panel" aria-label="Tezgâh araçları">
+      <fieldset>
+        <legend>Araç</legend>
+        <div class="seg seg3">
+          <label><input type="radio" name="tool" value="motif" checked><span>Motif</span></label>
+          <label><input type="radio" name="tool" value="ilmek"><span>İlmek</span></label>
+          <label><input type="radio" name="tool" value="zemin"><span>Zemin</span></label>
+        </div>
+      </fieldset>
+
+      <fieldset id="motif-set">
+        <legend>Motif</legend>
+        <div class="motifs" id="motifs"></div>
+        <p class="hint" id="hint">Tezgâha dokun: seçili motif dokunur.</p>
+      </fieldset>
+
+      <fieldset>
+        <legend>İp</legend>
+        <div class="swatches" id="swatches"></div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Simetri</legend>
+        <div class="seg seg3">
+          <label><input type="radio" name="sym" value="0"><span>Yok</span></label>
+          <label><input type="radio" name="sym" value="1"><span>İkili</span></label>
+          <label><input type="radio" name="sym" value="2" checked><span>Dörtlü</span></label>
+        </div>
+      </fieldset>
+
+      <div class="actions">
+        <button type="button" id="undo" disabled>Geri al</button>
+        <button type="button" id="new">Yeni kilim</button>
+        <button type="button" id="weave">Baştan doku</button>
+        <button type="button" id="share">Bağlantı</button>
+        <button type="button" id="png" class="primary">PNG indir</button>
+      </div>
+      <div class="sharebox" id="sharebox" hidden>
+        <label for="share-link" class="sr-only">Paylaşım bağlantısı</label>
+        <input id="share-link" type="text" readonly>
+      </div>
+      <p class="fine" id="kbd-help">Klavye: tezgâha odaklanıp oklarla ilmeği seç, Enter ile uygula. Z geri alır.</p>
+    </section>
+  </div>
+  <p class="sr-only" id="status" aria-live="polite"></p>
+</body>
+</html>

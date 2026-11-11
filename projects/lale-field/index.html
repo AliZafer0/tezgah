@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Lale — 0 ve 1'lerden</title>
+  <meta name="description" content="Binlerce 0 ve 1'den oluşan, rüzgârda salınan ve dokununca açan bir gece lale tarlası.">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#030206">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <main class="piece">
+    <canvas class="scene" id="scene" tabindex="0" role="img"
+      aria-label="Gece karanlığında, yalnızca 0 ve 1 karakterlerinden oluşan, rüzgârda salınan bir lale tarlası; ortada uzun, hançer yapraklı bir İstanbul lalesi."
+      aria-describedby="hint"></canvas>
+    <img class="fallback" id="fallback" alt="0 ve 1 karakterlerinden oluşan lale tarlasının durağan görüntüsü." hidden>
+
+    <header class="title">
+      <h1>Lale</h1>
+      <p>0 ve 1'lerden bir bahar.</p>
+    </header>
+
+    <p class="hint" id="hint">Basılı tut: laleler açar · Gezdir: rüzgâr eser</p>
+    <p class="note" id="note" hidden>Bu cihazda WebGL2 açılamadı; tarlanın durağan hâli gösteriliyor.</p>
+
+    <section class="controls" aria-label="Tarla kontrolleri" id="controls">
+      <div class="range">
+        <label for="open">Açılma</label>
+        <input id="open" type="range" min="0" max="100" value="45">
+      </div>
+      <div class="range">
+        <label for="breeze">Rüzgâr</label>
+        <input id="breeze" type="range" min="0" max="100" value="35">
+      </div>
+      <div class="seg" role="radiogroup" aria-label="Renk">
+        <label><input type="radio" name="pal" value="istanbul" checked><span>İstanbul</span></label>
+        <label><input type="radio" name="pal" value="bahce"><span>Bahçe</span></label>
+        <label><input type="radio" name="pal" value="gece"><span>Gece</span></label>
+      </div>
+      <button type="button" id="pause" aria-pressed="false">Duraklat</button>
+    </section>
+  </main>
+  <p class="sr-only" id="status" aria-live="polite"></p>
+</body>
+</html>

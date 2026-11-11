@@ -1,0 +1,12 @@
+{
+  "title": "Makam Klavyesi",
+  "slug": "makam-keys",
+  "description": "Hicaz, Rast, Uşşak, Sabâ… 53 komalı Türk müziği perdeleriyle çalan, makamın seyrini kendisi de gezinebilen ve Batı akoruyla farkı duyuran bir klavye.",
+  "tags": ["müzik", "makam", "web audio", "etkileşim", "eğitim"],
+  "status": "ready",
+  "cover": "cover.jpg",
+  "entry": "index.html",
+  "accent": "#d6a756",
+  "permissions": ["autoplay"],
+  "created": "2026-11-11"
+}

@@ -1,0 +1,12 @@
+{
+  "title": "Kilim — Dijital Tezgâh",
+  "slug": "kilim-loom",
+  "description": "Elibelinde, koçboynuzu, kurt izi: Anadolu kilim motifleriyle ilmek ilmek dokunan, simetrik ve paylaşılabilir bir dijital tezgâh.",
+  "tags": ["yaratıcı kodlama", "kilim", "etkileşim", "generatif sanat", "canvas"],
+  "status": "ready",
+  "cover": "cover.jpg",
+  "entry": "index.html",
+  "accent": "#9b2a22",
+  "permissions": ["clipboard-write"],
+  "created": "2026-11-11"
+}

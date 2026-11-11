@@ -1,0 +1,11 @@
+{
+  "title": "Lale — 0 ve 1'lerden",
+  "slug": "lale-field",
+  "description": "Binlerce 0 ve 1'den oluşan, rüzgârda salınan ve dokununca açan bir gece lale tarlası; ortada hançer yapraklı bir İstanbul lalesi.",
+  "tags": ["yaratıcı kodlama", "3d", "webgl", "generatif sanat", "etkileşim"],
+  "status": "ready",
+  "cover": "cover.jpg",
+  "entry": "index.html",
+  "accent": "#e0324e",
+  "created": "2026-11-11"
+}
