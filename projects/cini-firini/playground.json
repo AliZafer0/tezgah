@@ -1,0 +1,12 @@
+{
+  "title": "Çini Fırını",
+  "slug": "cini-firini",
+  "description": "İznik çinisi boya: tek fırça darbesi kaleydoskop simetrisiyle çoğalır; fırına verince renkler canlanır, sır ışığı yakalayıp parlar.",
+  "tags": ["yaratıcı kodlama", "çini", "simetri", "etkileşim", "canvas"],
+  "status": "ready",
+  "cover": "cover.jpg",
+  "entry": "index.html",
+  "accent": "#1c4b9a",
+  "permissions": ["clipboard-write"],
+  "created": "2026-11-12"
+}

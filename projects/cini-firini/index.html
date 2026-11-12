@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Çini Fırını</title>
+  <meta name="description" content="İznik çinisi boya: tek fırça darbesi kaleydoskop simetrisiyle çoğalır, fırına verince renkler canlanır ve sır ışıkta parlar.">
+  <meta name="theme-color" content="#14202d">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <div class="layout">
+    <canvas id="atolye" tabindex="0" role="img" aria-label="Çini boyama atölyesi" aria-describedby="hint kbd-help"></canvas>
+
+    <header class="head">
+      <h1>ÇİNİ FIRINI</h1>
+      <p>Bir fırça darbesi, on iki aynada.</p>
+    </header>
+
+    <section class="panel" aria-label="Atölye araçları">
+      <fieldset class="paint-only">
+        <legend>Biçim</legend>
+        <div class="seg seg2">
+          <label><input type="radio" name="shape" value="t" checked><span>Tabak</span></label>
+          <label><input type="radio" name="shape" value="k"><span>Karo</span></label>
+        </div>
+      </fieldset>
+
+      <fieldset class="paint-only">
+        <legend>Araç</legend>
+        <div class="seg seg3">
+          <label><input type="radio" name="tool" value="firca" checked><span>Fırça</span></label>
+          <label><input type="radio" name="tool" value="dolgu"><span>Dolgu</span></label>
+          <label><input type="radio" name="tool" value="benek"><span>Benek</span></label>
+        </div>
+        <p class="hint" id="hint">Tabağa fırça sür: iz bütün dilimlerde tekrarlanır.</p>
+      </fieldset>
+
+      <fieldset class="paint-only">
+        <legend>Boya</legend>
+        <div class="swatches" id="swatches"></div>
+      </fieldset>
+
+      <fieldset class="paint-only">
+        <legend>Fırça ve simetri</legend>
+        <div class="range">
+          <label for="width">Kalınlık</label>
+          <input id="width" type="range" min="1" max="30" value="7">
+          <output id="width-out" for="width">7</output>
+        </div>
+        <div class="range">
+          <label for="fold">Kat</label>
+          <input id="fold" type="range" min="1" max="12" value="8">
+          <output id="fold-out" for="fold">8</output>
+        </div>
+        <label class="check"><input id="mirror" type="checkbox" checked> Ayna</label>
+      </fieldset>
+
+      <div class="actions">
+        <button type="button" id="undo" class="paint-only" disabled>Geri al</button>
+        <button type="button" id="clear" class="paint-only">Temizle</button>
+        <button type="button" id="sample" class="paint-only">Örnek desen</button>
+        <button type="button" id="share">Bağlantı</button>
+        <button type="button" id="wall" class="fired-only" hidden>Duvara diz</button>
+        <button type="button" id="png">PNG indir</button>
+        <button type="button" id="fire" class="primary">Fırına ver</button>
+      </div>
+      <div class="sharebox" id="sharebox" hidden>
+        <label for="share-link" class="sr-only">Paylaşım bağlantısı</label>
+        <input id="share-link" type="text" readonly>
+      </div>
+      <p class="fine" id="kbd-help">Klavye: atölyeye odaklan, oklarla fırçayı gezdir, Enter fırçayı değdirir ya da kaldırır. F fırına verir, Z geri alır. Fırından sonra oklar ışığı gezdirir.</p>
+    </section>
+  </div>
+  <p class="sr-only" id="status" aria-live="polite"></p>
+</body>
+</html>

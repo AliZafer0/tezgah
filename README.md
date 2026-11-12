@@ -8,7 +8,7 @@
 Kilim, girih, makam, hat, ebru… Canvas, WebGL ve Web Audio ile, bağımlılıksız.
 
 [![Canlı galeri](https://img.shields.io/badge/canl%C4%B1-galeri-d6a756?style=flat-square)](https://py.execore.cloud/)
-[![Projeler](https://img.shields.io/badge/proje-12-9b2a22?style=flat-square)](#sahne)
+[![Projeler](https://img.shields.io/badge/proje-13-9b2a22?style=flat-square)](#sahne)
 [![Lisans: MIT](https://img.shields.io/badge/lisans-MIT-263b5e?style=flat-square)](LICENSE)
 [![Bağımlılık](https://img.shields.io/badge/projelerde%20ba%C4%9F%C4%B1ml%C4%B1l%C4%B1k-0-55703f?style=flat-square)](#yapı)
 
@@ -113,6 +113,15 @@ Arkadan kandille aydınlanan perde, deriden eklemli tasvirler: sürükle, salla,
 <a href="https://py.execore.cloud/projects/karagoz-perde/">Canlı</a> · <a href="projects/karagoz-perde/">Kaynak</a>
 </td>
 </tr>
+<tr>
+<td width="50%" valign="top">
+<a href="https://py.execore.cloud/projects/cini-firini/"><img src="projects/cini-firini/cover.jpg" alt="Çini Fırını"></a>
+<h3>🏺 Çini Fırını</h3>
+İznik çinisi boya: tek fırça darbesi on iki aynada çoğalır, fırına verince sır ışığı yakalar.<br>
+<a href="https://py.execore.cloud/projects/cini-firini/">Canlı</a> · <a href="projects/cini-firini/">Kaynak</a>
+</td>
+<td width="50%" valign="top"></td>
+</tr>
 </table>
 
 ## Atölye
@@ -130,6 +139,7 @@ Projelerin arkasındaki fikirler. Ayrıntılar her projenin kendi README'sinde.
 | [Binary Bloom](projects/binary-bloom/) · [Iris](projects/iris-gaze/) · [Mira](projects/mira-face/) | Karakterden görüntü: derinlik maskesi, iki geçişli hücre çizimi, HDR + bloom |
 | [Orbit](projects/orbit-sequencer/) | Ses saatine bağlı ileri zamanlayıcı, erişilebilir nota ızgarası |
 | [Karagöz Perdesi](projects/karagoz-perde/) | Hiyerarşik sönümlü sarkaçlarla eklem fiziği, arkadan aydınlatılmış deri için multiply basımı, mesafeye göre bulanıklaşan gölge |
+| [Çini Fırını](projects/cini-firini/) | n katlı dönme + ayna simetrisi tek `setTransform` ile, fırınlamada yükseklik haritasından normal, nokta ışıkla Blinn–Phong sır parlaması |
 | [Impossible Room](projects/impossible-room/) | Ortografik izdüşümde derinlik boyunca kaydırılan parçalar, histerezisli çözüm algılama |
 
 Ortak ilkeler:
