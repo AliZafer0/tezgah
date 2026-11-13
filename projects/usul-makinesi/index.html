@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Usul Makinesi</title>
+  <meta name="description" content="Düyek, Sofyan, Aksak, Curcuna… Türk usullerini düm-tek ile çalan, usulü çemberde döndüren bir ritim makinesi.">
+  <meta name="theme-color" content="#1d1310">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <div class="layout">
+    <canvas id="cember" tabindex="0" role="img" aria-label="Usul çemberi" aria-describedby="kbd-help"></canvas>
+
+    <header class="head">
+      <h1>USUL</h1>
+      <p>Düm, tek, devir.</p>
+    </header>
+
+    <section class="panel" aria-label="Usul makinesi">
+      <fieldset>
+        <legend>Usul</legend>
+        <div class="usuller" id="usuller"></div>
+        <p class="about" id="about"></p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Vuruşlar <span class="legend-note">dokununca değişir</span></legend>
+        <div class="cells" id="cells"></div>
+        <button type="button" class="link" id="restore" disabled>Aslına döndür</button>
+      </fieldset>
+
+      <fieldset>
+        <legend>Çalış</legend>
+        <div class="range">
+          <label for="tempo">Tempo</label>
+          <input id="tempo" type="range" min="40" max="320" value="184">
+          <output id="tempo-out" for="tempo">184</output>
+        </div>
+        <div class="range">
+          <label for="nefes">Nefes</label>
+          <input id="nefes" type="range" min="0" max="9" value="3" aria-describedby="nefes-note">
+          <output id="nefes-out" for="nefes">3</output>
+        </div>
+        <p class="fine" id="nefes-note">Nefes: vuruşlara insan elinin küçük kaymaları ve vurgu farkları.</p>
+        <div class="seg seg3" role="radiogroup" aria-label="Çalgı">
+          <label><input type="radio" name="ses" value="k" checked><span>Kudüm</span></label>
+          <label><input type="radio" name="ses" value="d"><span>Darbuka</span></label>
+          <label><input type="radio" name="ses" value="b"><span>Bendir</span></label>
+        </div>
+        <label class="check"><input id="zil" type="checkbox"> Devir başında zil</label>
+      </fieldset>
+
+      <div class="actions">
+        <button type="button" id="play" class="primary" aria-pressed="false">▶ Çal</button>
+        <button type="button" id="share">Bağlantı</button>
+      </div>
+      <div class="sharebox" id="sharebox" hidden>
+        <label for="share-link" class="sr-only">Paylaşım bağlantısı</label>
+        <input id="share-link" type="text" readonly>
+      </div>
+      <p class="fine" id="kbd-help">Klavye: Boşluk çalar ya da durdurur. Çembere odaklanınca ← → vuruş seçer, Enter vuruşu değiştirir, ↑ ↓ tempoyu ayarlar.</p>
+    </section>
+  </div>
+  <p class="sr-only" id="status" aria-live="polite"></p>
+</body>
+</html>

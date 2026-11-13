@@ -1,0 +1,12 @@
+{
+  "title": "Usul Makinesi",
+  "slug": "usul-makinesi",
+  "description": "Düyek, Sofyan, Aksak 9/8, Curcuna 10/8… Türk usullerini düm-tek ile çalan, usulü bir davul derisinin üstünde çemberde döndüren ritim makinesi.",
+  "tags": ["müzik", "usul", "ritim", "web audio", "etkileşim"],
+  "status": "ready",
+  "cover": "cover.jpg",
+  "entry": "index.html",
+  "accent": "#c27a3a",
+  "permissions": ["autoplay", "clipboard-write"],
+  "created": "2026-11-13"
+}
