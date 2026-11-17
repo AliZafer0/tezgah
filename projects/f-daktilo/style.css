@@ -1,0 +1,128 @@
+:root {
+  color-scheme: dark;
+  --desk: #1b2a24;
+  --ink: #1d2a24;
+  --muted: #5f7068;
+  --line: rgba(29, 42, 36, 0.18);
+  --panel: rgba(243, 240, 230, 0.95);
+  --accent: #a32218;
+  --enamel: #23332c;
+  --safe-t: env(safe-area-inset-top, 0px);
+  --safe-b: env(safe-area-inset-bottom, 0px);
+}
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; }
+body {
+  color: var(--ink); font: 15px/1.45 ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif; overflow: hidden;
+  background: radial-gradient(120% 80% at 60% 30%, #2f4339, #1b2a24 60%, #0f1915);
+}
+button, input { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid #e2b86a; outline-offset: 2px; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+[hidden] { display: none !important; }
+
+.layout { position: fixed; inset: 0; display: grid; grid-template-columns: 300px 1fr; }
+.masa { grid-column: 2; display: grid; grid-template-rows: minmax(0, 1fr) auto; min-width: 0; min-height: 0; position: relative; }
+/* Marka plakası: gövdenin sol üst köşesinde, kabartma harfler */
+.head { position: absolute; top: 12px; left: 22px; pointer-events: none; }
+.head h1 { margin: 0; font: 700 0.95rem/1 'Courier New', Courier, monospace; letter-spacing: 0.32em; color: #d9c9a0; text-shadow: 0 1px 0 #0d1612, 0 -1px 0 rgba(255, 255, 255, 0.12); }
+.head p { display: none; }
+#kagit { width: 100%; height: 100%; display: block; min-height: 0; }
+
+/* Daktilo gövdesi ve tuşlar */
+.govde {
+  position: relative; margin: 0 auto; width: min(100%, 900px); padding: 14px 18px calc(18px + var(--safe-b));
+  border-radius: 28px 28px 0 0;
+  background: linear-gradient(180deg, #2c4036, var(--enamel) 40%, #18241f);
+  box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.12), 0 -10px 40px rgba(0, 0, 0, 0.45);
+}
+.konum { margin: 0 0 8px; text-align: center; font: 0.78rem 'Courier New', monospace; color: #b8c9bf; letter-spacing: 0.08em; }
+.tuslar { --k: clamp(30px, min(5.6vw, 6.2vh), 56px); display: grid; gap: calc(var(--k) * 0.16); justify-items: center; user-select: none; -webkit-user-select: none; }
+.sira { display: flex; gap: calc(var(--k) * 0.14); }
+.sira.s1 { margin-left: calc(var(--k) * 0.35); }
+.sira.s2 { margin-left: calc(var(--k) * 0.7); }
+.sira.s3 { margin-left: calc(var(--k) * -0.4); }
+.tus {
+  position: relative; width: var(--k); height: var(--k); padding: 0; border-radius: 50%;
+  border: calc(var(--k) * 0.07) solid #c7ccd0;
+  background: radial-gradient(circle at 40% 32%, #3a3d42, #141518 70%);
+  box-shadow: 0 calc(var(--k) * 0.09) 0 #0b0c0e, 0 calc(var(--k) * 0.12) calc(var(--k) * 0.18) rgba(0, 0, 0, 0.55), inset 0 1px 1px rgba(255, 255, 255, 0.25);
+  color: #f3efe4; cursor: pointer; display: grid; place-items: center; line-height: 1; touch-action: manipulation;
+  transition: transform 0.06s, box-shadow 0.06s;
+}
+.tus span { font: 700 calc(var(--k) * 0.36) 'Courier New', Courier, monospace; }
+.tus small { position: absolute; top: 14%; font: 600 calc(var(--k) * 0.2) 'Courier New', monospace; color: #b9bdc3; }
+.tus small + span { margin-top: 26%; font-size: calc(var(--k) * 0.3); }
+.tus.bas, .tus:active { transform: translateY(calc(var(--k) * 0.08)); box-shadow: 0 calc(var(--k) * 0.02) 0 #0b0c0e, 0 2px 4px rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.2); }
+.tuslar:not(.ust) .tus:not(.ozel) small + span { }
+.tuslar.ust .tus:not(.ozel) span { color: #ffd78f; }
+.tus.ozel { width: auto; min-width: calc(var(--k) * 1.3); padding: 0 calc(var(--k) * 0.3); border-radius: calc(var(--k) * 0.5); font: 700 calc(var(--k) * 0.27) ui-sans-serif, system-ui, sans-serif; letter-spacing: 0.02em; }
+.tus.geri, .tus.donus { font-size: calc(var(--k) * 0.42); }
+.tus.donus { background: radial-gradient(circle at 40% 32%, #6b5a3a, #2c2414 70%); }
+.tus.bosluk { width: calc(var(--k) * 6.4); border-radius: calc(var(--k) * 0.3); }
+.tus.dar { display: none; }
+.tus.buyuk[aria-pressed="true"] { border-color: #e2b86a; }
+.tus.buyuk.kilit { background: radial-gradient(circle at 40% 32%, #6a4c18, #2a1e08 70%); }
+.tus.renk { background: linear-gradient(180deg, #141518 50%, #8f1d15 50%); }
+.tus.renk.kirmizi { background: linear-gradient(180deg, #8f1d15 50%, #141518 50%); }
+.sira.alt { gap: calc(var(--k) * 0.3); margin-top: calc(var(--k) * 0.08); }
+
+/* Panel */
+.panel {
+  grid-column: 1; grid-row: 1; align-self: start; margin: 16px; padding: 14px;
+  background: var(--panel); border: 1px solid var(--line); border-radius: 12px; box-shadow: 0 10px 34px rgba(0, 0, 0, 0.45);
+  display: grid; gap: 12px; max-height: calc(100vh - 32px); overflow: auto; position: relative; z-index: 2; color-scheme: light;
+}
+fieldset { border: 0; margin: 0; padding: 0; min-width: 0; display: grid; gap: 7px; }
+legend { padding: 0; margin-bottom: 6px; font: 600 0.72rem/1.2 ui-monospace, Menlo, monospace; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+.seg { display: grid; gap: 5px; }
+.seg2 { grid-template-columns: repeat(2, 1fr); }
+.seg3 { grid-template-columns: repeat(3, 1fr); }
+.seg label { position: relative; }
+.seg input { position: absolute; inset: 0; opacity: 0; margin: 0; cursor: pointer; }
+.seg span { display: flex; align-items: center; justify-content: center; min-height: 34px; border: 1px solid var(--line); border-radius: 8px; font-size: 0.88rem; background: rgba(255, 255, 255, 0.55); }
+.seg input:checked + span { background: var(--ink); color: #f3efe4; border-color: var(--ink); font-weight: 600; }
+.seg input[value="r"]:checked + span { background: #8f1d15; border-color: #8f1d15; }
+.seg input:focus-visible + span { outline: 2px solid var(--accent); outline-offset: 2px; }
+.ink { display: grid; grid-template-columns: 5.4em 1fr 3em; align-items: center; gap: 6px; font-size: 0.86rem; }
+.ink meter { width: 100%; height: 10px; }
+.ink output { text-align: right; font: 0.8rem ui-monospace, Menlo, monospace; color: var(--muted); }
+.link { justify-self: start; padding: 0; border: 0; background: none; color: var(--accent); text-decoration: underline; cursor: pointer; font-size: 0.84rem; }
+.check { display: inline-flex; align-items: center; gap: 6px; font-size: 0.88rem; cursor: pointer; }
+.check input { accent-color: var(--ink); width: 16px; height: 16px; }
+.actions { display: grid; grid-template-columns: 1fr 1fr; gap: 5px; }
+.actions button { min-height: 40px; padding: 0 6px; border: 1px solid var(--line); border-radius: 8px; background: rgba(255, 255, 255, 0.55); cursor: pointer; font-size: 0.88rem; touch-action: manipulation; }
+.actions button:hover { border-color: var(--ink); }
+.actions .primary { grid-column: 1 / -1; min-height: 44px; background: linear-gradient(#34493f, #1d2a24); color: #f3efe4; border-color: #111a16; font-weight: 700; }
+.sharebox input { width: 100%; padding: 6px 8px; border: 1px solid var(--line); border-radius: 6px; font: 0.75rem ui-monospace, Menlo, monospace; background: #fff; }
+.fine { margin: 0; font-size: 0.76rem; color: var(--muted); }
+
+@media (prefers-reduced-motion: reduce) { .tus { transition: none; } }
+
+/* Dar ekran: kâğıt üstte, tuşlar altta, ayarlar en altta (kaydırarak) */
+@media (max-width: 760px), (max-aspect-ratio: 4/5) {
+  body { overflow: auto; }
+  .layout { position: static; display: block; }
+  .masa { height: 100svh; }
+  .head { top: 9px; left: 14px; }
+  .head h1 { font-size: 0.72rem; }
+  .head p { display: none; }
+  .konum { text-align: right; padding-right: 10px; }
+  .govde { padding: 10px 6px calc(12px + var(--safe-b)); border-radius: 20px 20px 0 0; }
+  /* Telefonda tuşlar yuvarlak değil, parmağa göre uzun; geri ve satır başı alt sırada */
+  .tuslar { --k: calc((100vw - 16px) / 14.4); gap: 7px; }
+  .sira { gap: calc(var(--k) * 0.1); }
+  .sira.s1, .sira.s2, .sira.s3 { margin-left: 0; }
+  .tus { height: calc(var(--k) * 1.55); border-radius: 30%; border-width: 2px; }
+  .tus span { font-size: calc(var(--k) * 0.5); }
+  .tus small { font-size: calc(var(--k) * 0.3); top: 8%; }
+  .tus small + span { margin-top: 30%; font-size: calc(var(--k) * 0.42); }
+  .tus.genis { display: none; }
+  .tus.dar { display: grid; }
+  .tus.ozel { min-width: calc(var(--k) * 1.8); padding: 0 6px; font-size: 0.78rem; border-radius: 12px; }
+  .tus.geri, .tus.donus { font-size: 1.1rem; }
+  .tus.bosluk { width: auto; flex: 1; min-width: 0; }
+  .sira.alt { width: 100%; padding: 0 2px; gap: 5px; }
+  .panel { margin: 0; border-radius: 0; max-height: none; }
+  .fine { font-size: 0.74rem; }
+}

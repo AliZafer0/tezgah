@@ -8,7 +8,7 @@
 Kilim, girih, makam, hat, ebru… Canvas, WebGL ve Web Audio ile, bağımlılıksız.
 
 [![Canlı galeri](https://img.shields.io/badge/canl%C4%B1-galeri-d6a756?style=flat-square)](https://py.execore.cloud/)
-[![Projeler](https://img.shields.io/badge/proje-14-9b2a22?style=flat-square)](#sahne)
+[![Projeler](https://img.shields.io/badge/proje-18-9b2a22?style=flat-square)](#sahne)
 [![Lisans: MIT](https://img.shields.io/badge/lisans-MIT-263b5e?style=flat-square)](LICENSE)
 [![Bağımlılık](https://img.shields.io/badge/projelerde%20ba%C4%9F%C4%B1ml%C4%B1l%C4%B1k-0-55703f?style=flat-square)](#yapı)
 
@@ -127,6 +127,34 @@ Düyek, Aksak 9/8, Curcuna 10/8… Türk usullerini düm-tek ile çalan, çember
 <a href="https://py.execore.cloud/projects/usul-makinesi/">Canlı</a> · <a href="projects/usul-makinesi/">Kaynak</a>
 </td>
 </tr>
+<tr>
+<td width="50%" valign="top">
+<a href="https://py.execore.cloud/projects/simit-kuslari/"><img src="projects/simit-kuslari/cover.jpg" alt="Simit Kuşları"></a>
+<h3>🕊️ Simit Kuşları</h3>
+Vapurun peşindeki martı sürüsü: dokunduğun yere simit at, sürü dalgalanarak üşüşsün.<br>
+<a href="https://py.execore.cloud/projects/simit-kuslari/">Canlı</a> · <a href="projects/simit-kuslari/">Kaynak</a>
+</td>
+<td width="50%" valign="top">
+<a href="https://py.execore.cloud/projects/mangala/"><img src="projects/mangala/cover.jpg" alt="Mangala"></a>
+<h3>🪨 Mangala</h3>
+Geleneksel taş toplama oyunu: üç zorlukta yapay rakip, hamle önizlemesi ve kural rehberi.<br>
+<a href="https://py.execore.cloud/projects/mangala/">Canlı</a> · <a href="projects/mangala/">Kaynak</a>
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+<a href="https://py.execore.cloud/projects/mukarnas/"><img src="projects/mukarnas/cover.jpg" alt="Mukarnas"></a>
+<h3>🕌 Mukarnas</h3>
+Kat kat sarkan mukarnas kubbe üreteci: kat, hücre biçimi ve kaplamayla oyna, altından yukarı bak.<br>
+<a href="https://py.execore.cloud/projects/mukarnas/">Canlı</a> · <a href="projects/mukarnas/">Kaynak</a>
+</td>
+<td width="50%" valign="top">
+<a href="https://py.execore.cloud/projects/f-daktilo/"><img src="projects/f-daktilo/cover.jpg" alt="F Daktilo"></a>
+<h3>⌨️ F Daktilo</h3>
+Türkçe F klavyeli daktilo: tuş vuruşu, şerit mürekkebi, satır sonu zili; sayfayı çek, indir.<br>
+<a href="https://py.execore.cloud/projects/f-daktilo/">Canlı</a> · <a href="projects/f-daktilo/">Kaynak</a>
+</td>
+</tr>
 </table>
 
 ## Atölye
@@ -146,6 +174,10 @@ Projelerin arkasındaki fikirler. Ayrıntılar her projenin kendi README'sinde.
 | [Karagöz Perdesi](projects/karagoz-perde/) | Hiyerarşik sönümlü sarkaçlarla eklem fiziği, arkadan aydınlatılmış deri için multiply basımı, mesafeye göre bulanıklaşan gölge |
 | [Çini Fırını](projects/cini-firini/) | n katlı dönme + ayna simetrisi tek `setTransform` ile, fırınlamada yükseklik haritasından normal, nokta ışıkla Blinn–Phong sır parlaması |
 | [Usul Makinesi](projects/usul-makinesi/) | Ses saatine bağlı ileri zamanlayıcı, örneksiz kudüm/darbuka/bendir sentezi, gecikmesi düşülmüş ibre, grup yaylarıyla aksak ölçüler |
+| [Simit Kuşları](projects/simit-kuslari/) | Uzaysal ızgarada bağlı listelerle komşu arama, ayrılma/hizalanma/toplanma, kademeli hedef seçimi, balistik simit atışı |
+| [Mangala](projects/mangala/) | 14 hücrelik tahta, kurallı dağıtım; alfa-beta budamalı, ek hamlede sıra değiştirmeyen, süreyle derinleşen negamax |
+| [Mukarnas](projects/mukarnas/) | Yarım hücre kaydırılmış katlar, nişler arası dolgularla dikişsiz yüzey, sonlu farklarla normal, kandil ışığında WebGL |
+| [F Daktilo](projects/f-daktilo/) | Ayrı kâğıt tuvaline çarpma kipinde mürekkep dokusu, Q konumundan F'ye tuş eşleme, örneksiz daktilo sesleri |
 | [Impossible Room](projects/impossible-room/) | Ortografik izdüşümde derinlik boyunca kaydırılan parçalar, histerezisli çözüm algılama |
 
 Ortak ilkeler:

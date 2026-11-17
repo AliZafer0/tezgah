@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Simit Kuşları</title>
+  <meta name="description" content="Vapurun peşindeki martı sürüsü: dokunduğun yere simit at, sürü dalgalanarak üşüşsün.">
+  <meta name="theme-color" content="#1e4f6b">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <div class="layout">
+    <canvas id="deniz" tabindex="0" role="img" aria-label="Vapur ve martılar" aria-describedby="kbd-help"></canvas>
+
+    <header class="head">
+      <h1>SİMİT KUŞLARI</h1>
+      <p>Vapur kalkar, martılar peşinden.</p>
+    </header>
+
+    <section class="panel" aria-label="Simit kuşları ayarları">
+      <div class="actions">
+        <button type="button" id="at" class="primary">Simit at</button>
+        <button type="button" id="share">Bağlantı</button>
+      </div>
+      <p class="tally" id="tally">Atılan 0 · yenen 0</p>
+      <div class="sharebox" id="sharebox" hidden>
+        <label for="share-link" class="sr-only">Paylaşım bağlantısı</label>
+        <input id="share-link" type="text" readonly>
+      </div>
+
+      <fieldset>
+        <legend>Vakit</legend>
+        <div class="seg seg3" role="radiogroup" aria-label="Vakit">
+          <label><input type="radio" name="vakit" value="s"><span>Sabah</span></label>
+          <label><input type="radio" name="vakit" value="i" checked><span>İkindi</span></label>
+          <label><input type="radio" name="vakit" value="a"><span>Akşam</span></label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Sürü</legend>
+        <div class="range">
+          <label for="suru">Martı</label>
+          <input id="suru" type="range" min="20" max="400" step="10" value="140">
+          <output id="suru-out" for="suru">140</output>
+        </div>
+        <div class="range">
+          <label for="tavir">Tavır</label>
+          <input id="tavir" type="range" min="0" max="9" value="5" aria-describedby="tavir-note">
+          <output id="tavir-out" for="tavir">5</output>
+        </div>
+        <p class="fine" id="tavir-note">Tavır: 0 dağınık, 9 sıkı sürü. Martılar komşularıyla hizalanır ve toplanır.</p>
+        <div class="range">
+          <label for="ruzgar">Rüzgâr</label>
+          <input id="ruzgar" type="range" min="-5" max="5" value="1">
+          <output id="ruzgar-out" for="ruzgar">Lodos 1</output>
+        </div>
+      </fieldset>
+
+      <p class="fine" id="kbd-help">Denize ya da göğe dokun: oraya simit atılır. Klavye: sahneye odaklanınca oklar nişangâhı gezdirir (Shift ile hızlı), Enter simidi atar.</p>
+    </section>
+  </div>
+  <p class="sr-only" id="status" aria-live="polite"></p>
+</body>
+</html>

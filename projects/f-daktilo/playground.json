@@ -1,0 +1,12 @@
+{
+  "title": "F Daktilo",
+  "slug": "f-daktilo",
+  "description": "Türkçe F klavyeli daktilo: tuş vuruşu, şerit mürekkebi, satır sonu zili. Yazdığın sayfayı çekip resim olarak indir ya da bağlantıyla paylaş.",
+  "tags": ["araç", "tipografi", "daktilo", "f klavye", "web audio"],
+  "status": "ready",
+  "cover": "cover.jpg",
+  "entry": "index.html",
+  "accent": "#a32218",
+  "permissions": ["autoplay", "clipboard-write"],
+  "created": "2026-11-17"
+}

@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Mangala</title>
+  <meta name="description" content="Geleneksel taş toplama oyunu Mangala: üç zorlukta yapay rakip, hamle önizlemesi ve kural rehberi.">
+  <meta name="theme-color" content="#2a1a10">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <div class="layout">
+    <main class="sahne">
+      <header class="head">
+        <h1>MANGALA</h1>
+        <p>Dört taş, altı kuyu, bir hazine.</p>
+      </header>
+      <div class="skor" aria-live="off">
+        <span class="oyuncu o1"><span id="ad-1">Rakip</span> <b id="skor-1">0</b></span>
+        <p class="sira" id="sira">Sıra sende</p>
+        <span class="oyuncu o0"><span id="ad-0">Sen</span> <b id="skor-0">0</b></span>
+      </div>
+      <div class="tahta" id="tahta" role="group" aria-label="Mangala tahtası" aria-describedby="kbd-help"></div>
+      <p class="onizleme" id="onizleme" aria-live="polite">&nbsp;</p>
+    </main>
+
+    <section class="panel" aria-label="Oyun ayarları">
+      <div class="actions">
+        <button type="button" id="yeni" class="primary">Yeni oyun</button>
+        <button type="button" id="geri">Geri al</button>
+        <button type="button" id="kurallar">Kurallar</button>
+        <button type="button" id="share">Bağlantı</button>
+      </div>
+      <div class="sharebox" id="sharebox" hidden>
+        <label for="share-link" class="sr-only">Paylaşım bağlantısı</label>
+        <input id="share-link" type="text" readonly>
+      </div>
+      <fieldset>
+        <legend>Rakip</legend>
+        <div class="seg seg2" role="radiogroup" aria-label="Oyun biçimi">
+          <label><input type="radio" name="mod" value="b" checked><span>Bilgisayar</span></label>
+          <label><input type="radio" name="mod" value="i"><span>İki kişi</span></label>
+        </div>
+      </fieldset>
+      <fieldset id="zorluk-kutu">
+        <legend>Zorluk</legend>
+        <div class="seg seg3" role="radiogroup" aria-label="Zorluk">
+          <label><input type="radio" name="zorluk" value="k"><span>Kolay</span></label>
+          <label><input type="radio" name="zorluk" value="o" checked><span>Orta</span></label>
+          <label><input type="radio" name="zorluk" value="z"><span>Zor</span></label>
+        </div>
+      </fieldset>
+      <div class="checks">
+        <label class="check"><input id="rakip-baslar" type="checkbox"> Rakip başlasın</label>
+        <label class="check"><input id="ses" type="checkbox" checked> Ses</label>
+      </div>
+      <p class="fine" id="kbd-help">Bir kuyunun üstüne gel ya da odaklan: taşların nereye düşeceği görünür. Klavye: oklar sıradaki kuyular arasında gezer, Enter oynar; 1–6 tuşları doğrudan o kuyuyu oynar.</p>
+    </section>
+  </div>
+
+  <dialog id="kural-penceresi" aria-labelledby="kural-baslik">
+    <form method="dialog" class="kural">
+      <h2 id="kural-baslik">Kurallar</h2>
+      <ol>
+        <li>Her oyuncunun önünde altı kuyu, sağında bir hazine vardır. Başta her kuyuda dört taş durur.</li>
+        <li>Sıra sendeyken kendi tarafından bir kuyunun taşlarını alırsın. İlk taşı aldığın kuyuya bırakır, kalanları saatin tersi yönünde birer birer dağıtırsın. Kendi hazinene taş koyarsın, rakibinkine koymazsın.</li>
+        <li>Kuyuda tek taş varsa o taş bir sonraki kuyuya geçer.</li>
+        <li><b>Hazine:</b> Son taş kendi hazinene düşerse bir daha oynarsın.</li>
+        <li><b>Çift:</b> Son taş rakibin bir kuyusundaki taş sayısını çift yaparsa o kuyudaki bütün taşları hazinene alırsın.</li>
+        <li><b>Boş kuyu:</b> Son taş kendi tarafındaki boş bir kuyuya düşerse ve karşısındaki kuyuda taş varsa, iki kuyudaki taşların hepsi hazinene gider.</li>
+        <li><b>Bitiş:</b> Bir tarafın kuyuları boşalınca oyun biter. Taşları biten oyuncu, karşı taraftaki kuyularda kalan taşları da alır. Hazinesinde çok taş olan kazanır.</li>
+      </ol>
+      <p class="fine">Mangala bölgeye göre küçük farklarla oynanır; burada en yaygın Türkiye kuralları kullanıldı.</p>
+      <button type="submit" class="kapat">Tamam</button>
+    </form>
+  </dialog>
+  <p class="sr-only" id="status" aria-live="polite"></p>
+</body>
+</html>

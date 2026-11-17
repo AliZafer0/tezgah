@@ -1,0 +1,12 @@
+{
+  "title": "Mangala",
+  "slug": "mangala",
+  "description": "Geleneksel taş toplama oyunu: oyulmuş ceviz tahta, cam taşlar, üç zorlukta yapay rakip, hamle önizlemesi ve kural rehberi.",
+  "tags": ["oyun", "mangala", "yapay zekâ", "alfa-beta", "geleneksel"],
+  "status": "ready",
+  "cover": "cover.jpg",
+  "entry": "index.html",
+  "accent": "#b5713b",
+  "permissions": ["autoplay", "clipboard-write"],
+  "created": "2026-11-15"
+}

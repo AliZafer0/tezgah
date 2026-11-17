@@ -1,0 +1,12 @@
+{
+  "title": "Simit Kuşları",
+  "slug": "simit-kuslari",
+  "description": "Vapurun peşindeki martı sürüsü: dokunduğun yere simit at, sürü dalgalanarak üşüşsün. Sabah, ikindi ya da akşam; lodos ya da poyraz.",
+  "tags": ["simülasyon", "sürü", "boids", "istanbul", "etkileşim"],
+  "status": "ready",
+  "cover": "cover.jpg",
+  "entry": "index.html",
+  "accent": "#c47a35",
+  "permissions": ["clipboard-write"],
+  "created": "2026-11-14"
+}

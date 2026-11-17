@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>F Daktilo</title>
+  <meta name="description" content="Türkçe F klavyeli daktilo: tuş vuruşu, şerit mürekkebi, satır sonu zili; sayfayı çekip resim olarak indir.">
+  <meta name="theme-color" content="#1b2a24">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <div class="layout">
+    <main class="masa">
+      <canvas id="kagit" role="img" aria-label="Daktilodaki kâğıt" aria-describedby="kbd-help"></canvas>
+      <div class="govde">
+        <header class="head">
+          <h1>F DAKTİLO</h1>
+          <p>Tak, tak, tak… dın!</p>
+        </header>
+        <p class="konum" id="konum" aria-hidden="true">Satır 1 · sütun 1</p>
+        <div class="tuslar" id="tuslar" aria-label="F klavye"></div>
+      </div>
+    </main>
+
+    <section class="panel" aria-label="Daktilo ayarları">
+      <div class="actions">
+        <button type="button" id="cek" class="primary">Kâğıdı çek</button>
+        <button type="button" id="kopyala">Metni kopyala</button>
+        <button type="button" id="share">Bağlantı</button>
+      </div>
+      <div class="sharebox" id="sharebox" hidden>
+        <label for="share-link" class="sr-only">Paylaşım bağlantısı</label>
+        <input id="share-link" type="text" readonly>
+      </div>
+      <fieldset>
+        <legend>Şerit</legend>
+        <div class="seg seg2" role="radiogroup" aria-label="Şerit rengi">
+          <label><input type="radio" name="serit" value="s" checked><span>Siyah</span></label>
+          <label><input type="radio" name="serit" value="r"><span>Kırmızı</span></label>
+        </div>
+        <div class="ink">
+          <label for="murekkep">Mürekkep</label>
+          <meter id="murekkep" min="0" max="1" low="0.45" optimum="1" value="1"></meter>
+          <output id="murekkep-out" for="murekkep">%100</output>
+        </div>
+        <button type="button" class="link" id="serit-degistir">Şeridi değiştir</button>
+      </fieldset>
+      <fieldset>
+        <legend>Satır aralığı</legend>
+        <div class="seg seg3" role="radiogroup" aria-label="Satır aralığı">
+          <label><input type="radio" name="aralik" value="2" checked><span>1</span></label>
+          <label><input type="radio" name="aralik" value="3"><span>1,5</span></label>
+          <label><input type="radio" name="aralik" value="4"><span>2</span></label>
+        </div>
+      </fieldset>
+      <label class="check"><input id="fmap" type="checkbox"> Q klavyede F düzeni</label>
+      <label class="check"><input id="ses" type="checkbox" checked> Ses</label>
+      <p class="fine" id="kbd-help">Doğrudan klavyenle yaz ya da ekrandaki tuşlara dokun. Enter satır başı yapar, Geri şaryoyu bir harf geri alır (silmez, üstüne basılır), Sekme beşer sütun atlar. Sağ kenara altı harf kala zil çalar. "Q klavyede F düzeni" açıkken Q klavyenin tuşları F düzenindeki yerlerine göre basar.</p>
+    </section>
+  </div>
+  <p class="sr-only" id="status" aria-live="polite"></p>
+</body>
+</html>

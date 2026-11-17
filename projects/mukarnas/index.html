@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Mukarnas</title>
+  <meta name="description" content="Kat kat sarkan mukarnas kubbe üreteci: kat sayısı, hücre biçimi ve kaplamayla oyna, altından yukarı bak.">
+  <meta name="theme-color" content="#0d0907">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <div class="layout">
+    <canvas id="kubbe" tabindex="0" role="img" aria-label="Mukarnas kubbe" aria-describedby="kbd-help"></canvas>
+    <p class="gl-yok" id="gl-yok" hidden>Bu tarayıcı WebGL desteklemiyor; kubbe çizilemedi.</p>
+
+    <header class="head">
+      <h1>MUKARNAS</h1>
+      <p>Taşın sarkıt gibi aşağı indiği yer.</p>
+    </header>
+
+    <section class="panel" aria-label="Kubbe ayarları">
+      <fieldset>
+        <legend>Kubbe</legend>
+        <div class="range">
+          <label for="kat">Kat</label>
+          <input id="kat" type="range" min="3" max="9" value="6">
+          <output id="kat-out" for="kat">6</output>
+        </div>
+        <div class="seg seg5" role="radiogroup" aria-label="Katta hücre sayısı">
+          <label><input type="radio" name="hucre" value="8"><span>8</span></label>
+          <label><input type="radio" name="hucre" value="12"><span>12</span></label>
+          <label><input type="radio" name="hucre" value="16" checked><span>16</span></label>
+          <label><input type="radio" name="hucre" value="24"><span>24</span></label>
+          <label><input type="radio" name="hucre" value="32"><span>32</span></label>
+        </div>
+        <p class="fine">Katta hücre sayısı; komşu katlar yarım hücre kayar.</p>
+      </fieldset>
+      <fieldset>
+        <legend>Hücre biçimi</legend>
+        <div class="seg seg3" role="radiogroup" aria-label="Hücre biçimi">
+          <label><input type="radio" name="bicim" value="k" checked><span>Kemer</span></label>
+          <label><input type="radio" name="bicim" value="b"><span>Badem</span></label>
+          <label><input type="radio" name="bicim" value="p"><span>Petek</span></label>
+        </div>
+        <div class="range">
+          <label for="derinlik">Oyuk</label>
+          <input id="derinlik" type="range" min="1" max="9" value="5">
+          <output id="derinlik-out" for="derinlik">5</output>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Kaplama</legend>
+        <div class="seg seg3" role="radiogroup" aria-label="Kaplama">
+          <label><input type="radio" name="malzeme" value="a"><span>Alçı</span></label>
+          <label><input type="radio" name="malzeme" value="g" checked><span>Altın</span></label>
+          <label><input type="radio" name="malzeme" value="c"><span>Çini</span></label>
+        </div>
+      </fieldset>
+      <label class="check"><input id="don" type="checkbox" checked> Yavaşça dön</label>
+      <div class="actions">
+        <button type="button" id="alttan" class="primary">Alttan bak</button>
+        <button type="button" id="png">Resim</button>
+        <button type="button" id="share">Bağlantı</button>
+      </div>
+      <div class="sharebox" id="sharebox" hidden>
+        <label for="share-link" class="sr-only">Paylaşım bağlantısı</label>
+        <input id="share-link" type="text" readonly>
+      </div>
+      <p class="fine" id="bilgi"></p>
+      <p class="fine" id="kbd-help">Sürükle: etrafında dön ve eğ. Tekerlek ya da iki parmak: yaklaş. Klavye: ← → döndürür, ↑ ↓ eğer, + − yaklaştırır.</p>
+    </section>
+  </div>
+  <p class="sr-only" id="status" aria-live="polite"></p>
+</body>
+</html>

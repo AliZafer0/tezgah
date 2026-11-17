@@ -1,0 +1,12 @@
+{
+  "title": "Mukarnas",
+  "slug": "mukarnas",
+  "description": "Kat kat sarkan mukarnas kubbe üreteci: kat sayısı, hücre biçimi ve kaplamayla oyna, kandilin ışığında altından yukarı bak.",
+  "tags": ["3b", "webgl", "mimari", "mukarnas", "üreteç"],
+  "status": "ready",
+  "cover": "cover.jpg",
+  "entry": "index.html",
+  "accent": "#c79a46",
+  "permissions": ["clipboard-write"],
+  "created": "2026-11-16"
+}
