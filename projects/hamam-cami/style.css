@@ -1,0 +1,38 @@
+:root { color-scheme: light; --ink: #3a2a1c; --muted: #7a6550; --line: rgba(58, 42, 28, 0.18); --panel: rgba(250, 245, 236, 0.86); --accent: #a36d3a; --safe-b: env(safe-area-inset-bottom, 0px); --safe-t: env(safe-area-inset-top, 0px); }
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; }
+body { background: #c9ab82; color: var(--ink); font: 15px/1.45 ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif; overflow: hidden; }
+button, input { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+.layout { position: fixed; inset: 0; display: grid; grid-template-columns: 290px 1fr; }
+#cam { grid-column: 1 / -1; grid-row: 1; width: 100%; height: 100%; display: block; touch-action: none; cursor: crosshair; }
+#cam:focus-visible { outline: 3px solid #fff; outline-offset: -6px; }
+.head { position: absolute; top: calc(20px + var(--safe-t)); right: 24px; text-align: right; pointer-events: none; color: #5b432c; }
+.head h1 { margin: 0; font: 400 1.8rem/1 'Iowan Old Style', Palatino, Georgia, serif; letter-spacing: 0.32em; }
+.head p { margin: 4px 0 0; font: italic 0.95rem Georgia, serif; opacity: 0.8; }
+.panel { grid-column: 1; grid-row: 1; align-self: start; margin: 16px; padding: 14px; display: grid; gap: 12px; background: var(--panel); border: 1px solid var(--line); border-radius: 14px; box-shadow: 0 10px 30px rgba(60, 40, 20, 0.25); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); position: relative; z-index: 2; }
+fieldset { border: 0; margin: 0; padding: 0; min-width: 0; }
+legend { padding: 0; margin-bottom: 6px; font: 600 0.72rem/1.2 ui-monospace, Menlo, monospace; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+.seg { display: grid; gap: 5px; }
+.seg2 { grid-template-columns: 1fr 1fr; }
+.seg label { position: relative; }
+.seg input { position: absolute; inset: 0; opacity: 0; margin: 0; cursor: pointer; }
+.seg span { display: flex; align-items: center; justify-content: center; min-height: 36px; border: 1px solid var(--line); border-radius: 8px; font-size: 0.88rem; background: rgba(255, 255, 255, 0.55); }
+.seg input:checked + span { background: var(--ink); color: #faf3e8; border-color: var(--ink); font-weight: 600; }
+.seg input:focus-visible + span { outline: 2px solid var(--accent); outline-offset: 2px; }
+.range { display: grid; grid-template-columns: 4em 1fr 1.6em; align-items: center; gap: 6px; font-size: 0.86rem; }
+.range input { width: 100%; accent-color: var(--ink); }
+.range output { text-align: right; font: 0.8rem ui-monospace, Menlo, monospace; color: var(--muted); }
+.actions { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; }
+.actions button { min-height: 40px; padding: 0 4px; border: 1px solid var(--line); border-radius: 8px; background: rgba(255, 255, 255, 0.6); cursor: pointer; font-size: 0.86rem; touch-action: manipulation; }
+.actions button:hover { border-color: var(--ink); }
+.fine { margin: 0; font-size: 0.76rem; color: var(--muted); }
+@media (max-width: 760px), (max-aspect-ratio: 4/5) {
+  .layout { grid-template-columns: 1fr; grid-template-rows: 1fr auto; }
+  #cam { grid-row: 1 / -1; }
+  .panel { grid-row: 2; align-self: end; margin: 0; border-radius: 16px 16px 0 0; padding: 10px 12px calc(10px + var(--safe-b)); gap: 8px; }
+  .head { top: calc(10px + var(--safe-t)); right: 12px; }
+  .head h1 { font-size: 1.1rem; }
+  .head p, .fine { display: none; }
+}

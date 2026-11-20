@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Hamam Camı</title>
+  <meta name="description" content="Buğulu cama parmakla yaz; buğu yavaşça geri gelir, damlalar iz bırakarak süzülür.">
+  <meta name="theme-color" content="#c9ab82">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <div class="layout">
+    <canvas id="cam" tabindex="0" role="img" aria-label="Buğulu hamam camı; parmakla ya da fareyle yazılabilir" aria-describedby="kbd-help"></canvas>
+    <header class="head">
+      <h1>HAMAM CAMI</h1>
+      <p>Buğuya bir şey yaz.</p>
+    </header>
+    <section class="panel" aria-label="Hamam camı ayarları">
+      <div class="actions">
+        <button type="button" id="sil">Hepsini sil</button>
+        <button type="button" id="bugula">Buğulandır</button>
+        <button type="button" id="png">Resim</button>
+      </div>
+      <fieldset>
+        <legend>Sahne</legend>
+        <div class="seg seg2" role="radiogroup" aria-label="Sahne">
+          <label><input type="radio" name="sahne" value="k" checked><span>Kurna başı</span></label>
+          <label><input type="radio" name="sahne" value="s"><span>Soğukluk</span></label>
+        </div>
+      </fieldset>
+      <div class="range"><label for="buhar">Buhar</label><input id="buhar" type="range" min="0" max="9" value="5"><output id="buhar-out" for="buhar">5</output></div>
+      <div class="range"><label for="firca">Parmak</label><input id="firca" type="range" min="1" max="9" value="5"><output id="firca-out" for="firca">5</output></div>
+      <p class="fine" id="kbd-help">Cama dokunup sürükle. Buhar arttıkça buğu daha çabuk geri gelir; 0'da yazı kalır. Klavye: oklar parmağı gezdirir, Boşluk basılıyken siler.</p>
+    </section>
+  </div>
+  <p class="sr-only" id="status" aria-live="polite"></p>
+</body>
+</html>

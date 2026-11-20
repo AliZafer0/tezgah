@@ -1,0 +1,11 @@
+{
+  "title": "Hamam Camı",
+  "slug": "hamam-cami",
+  "description": "Buğulu hamam camına parmakla yaz: buğu yavaşça geri gelir, damlalar iz bırakarak süzülür; arkada kubbenin fil gözlerinden süzülen ışık.",
+  "tags": ["doğa", "etkileşim", "buğu", "damla", "hamam"],
+  "status": "ready",
+  "cover": "cover.jpg",
+  "entry": "index.html",
+  "accent": "#a36d3a",
+  "created": "2026-11-18"
+}

@@ -8,7 +8,7 @@
 Kilim, girih, makam, hat, ebru… Canvas, WebGL ve Web Audio ile, bağımlılıksız.
 
 [![Canlı galeri](https://img.shields.io/badge/canl%C4%B1-galeri-d6a756?style=flat-square)](https://py.execore.cloud/)
-[![Projeler](https://img.shields.io/badge/proje-18-9b2a22?style=flat-square)](#sahne)
+[![Projeler](https://img.shields.io/badge/proje-19-9b2a22?style=flat-square)](#sahne)
 [![Lisans: MIT](https://img.shields.io/badge/lisans-MIT-263b5e?style=flat-square)](LICENSE)
 [![Bağımlılık](https://img.shields.io/badge/projelerde%20ba%C4%9F%C4%B1ml%C4%B1l%C4%B1k-0-55703f?style=flat-square)](#yapı)
 
@@ -155,6 +155,15 @@ Türkçe F klavyeli daktilo: tuş vuruşu, şerit mürekkebi, satır sonu zili; 
 <a href="https://py.execore.cloud/projects/f-daktilo/">Canlı</a> · <a href="projects/f-daktilo/">Kaynak</a>
 </td>
 </tr>
+<tr>
+<td width="50%" valign="top">
+<a href="https://py.execore.cloud/projects/hamam-cami/"><img src="projects/hamam-cami/cover.jpg" alt="Hamam Camı"></a>
+<h3>💧 Hamam Camı</h3>
+Buğulu cama parmakla yaz; buğu yavaşça geri gelir, damlalar iz bırakarak süzülür.<br>
+<a href="https://py.execore.cloud/projects/hamam-cami/">Canlı</a> · <a href="projects/hamam-cami/">Kaynak</a>
+</td>
+<td width="50%" valign="top"></td>
+</tr>
 </table>
 
 ## Atölye
@@ -178,6 +187,7 @@ Projelerin arkasındaki fikirler. Ayrıntılar her projenin kendi README'sinde.
 | [Mangala](projects/mangala/) | 14 hücrelik tahta, kurallı dağıtım; alfa-beta budamalı, ek hamlede sıra değiştirmeyen, süreyle derinleşen negamax |
 | [Mukarnas](projects/mukarnas/) | Yarım hücre kaydırılmış katlar, nişler arası dolgularla dikişsiz yüzey, sonlu farklarla normal, kandil ışığında WebGL |
 | [F Daktilo](projects/f-daktilo/) | Ayrı kâğıt tuvaline çarpma kipinde mürekkep dokusu, Q konumundan F'ye tuş eşleme, örneksiz daktilo sesleri |
+| [Hamam Camı](projects/hamam-cami/) | Dörtte bir çözünürlüklü silme maskesi, birikimli yeniden buğulanma, kütleli ve takılan damlalar, iz katmanı |
 | [Impossible Room](projects/impossible-room/) | Ortografik izdüşümde derinlik boyunca kaydırılan parçalar, histerezisli çözüm algılama |
 
 Ortak ilkeler:
