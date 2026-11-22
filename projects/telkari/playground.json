@@ -1,0 +1,11 @@
+{
+  "title": "Telkari",
+  "slug": "telkari",
+  "description": "Gümüş tel işçiliği: kıvrım kıvrım spiraller simetriyle çoğalıp kendiliğinden bir broş, küpe ya da madalyon deseni örer.",
+  "tags": ["desen", "telkari", "spiral", "simetri", "svg"],
+  "status": "ready",
+  "cover": "cover.jpg",
+  "entry": "index.html",
+  "accent": "#8e9aa6",
+  "created": "2026-11-22"
+}

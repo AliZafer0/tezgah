@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Usturlap</title>
+  <meta name="description" content="İstanbul enlemine göre çalışan bir usturlap: örümceği çevir, yükseklikleri oku, saati bul.">
+  <meta name="theme-color" content="#0e1626">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <div class="layout">
+    <canvas id="alet" tabindex="0" role="img" aria-label="Usturlap; örümcek sürüklenerek ya da ok tuşlarıyla döndürülür" aria-describedby="kbd-help"></canvas>
+    <header class="head">
+      <h1>USTURLAP</h1>
+      <p>İstanbul · 41° Kuzey</p>
+    </header>
+    <section class="panel" aria-label="Usturlap ayarları ve okumalar">
+      <div class="when">
+        <label><span>Tarih</span><input id="tarih" type="date"></label>
+        <label><span>Saat</span><input id="saat" type="time" step="60"></label>
+      </div>
+      <div class="actions">
+        <button type="button" id="simdi">Şimdi</button>
+        <button type="button" id="dondur" aria-pressed="false">Zamanı akıt</button>
+      </div>
+      <dl class="oku">
+        <div><dt>Güneş</dt><dd id="o-gunes">–</dd></div>
+        <div><dt id="o-secili-ad">Yıldız</dt><dd id="o-secili">–</dd></div>
+        <div><dt>Güneş saati</dt><dd id="o-gsaat">–</dd></div>
+        <div><dt>Yıldız zamanı</dt><dd id="o-lst">–</dd></div>
+      </dl>
+      <label class="sec"><span>Yıldız</span><select id="yildiz"></select></label>
+      <details class="olc">
+        <summary>Yükseklikten saati bul</summary>
+        <p>Usturlabın asıl işi: gök cisminin ufuktan yüksekliğini ölç, örümceği o yüksekliğe çevir, saati oku.</p>
+        <div class="olc-row">
+          <label><span>Cisim</span><select id="o-cisim"></select></label>
+          <label><span>Yükseklik °</span><input id="o-yuk" type="number" min="-5" max="90" step="0.5" value="30"></label>
+        </div>
+        <div class="seg" role="radiogroup" aria-label="Gökteki yarı">
+          <label><input type="radio" name="yari" value="d" checked><span>Doğuda (yükseliyor)</span></label>
+          <label><input type="radio" name="yari" value="b"><span>Batıda (alçalıyor)</span></label>
+        </div>
+        <button type="button" id="bul">Saati bul</button>
+        <p id="sonuc" class="sonuc" aria-live="polite"></p>
+      </details>
+      <p class="fine" id="kbd-help">Örümceği sürükle ya da usturlaba odaklanıp ok tuşlarıyla çevir (Shift ile bir saat). Bir yıldıza dokununca seçilir.</p>
+    </section>
+  </div>
+  <p class="sr-only" id="status" aria-live="polite"></p>
+</body>
+</html>

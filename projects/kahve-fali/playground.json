@@ -1,0 +1,11 @@
+{
+  "title": "Kahve Falı",
+  "slug": "kahve-fali",
+  "description": "Kahveni iç, fincanı kapat, telve kurusun; akıp donan telvedeki şekiller bulunur ve onlardan eğlencelik bir fal yazılır.",
+  "tags": ["simülasyon", "kahve", "fal", "parçacık", "şekil algılama"],
+  "status": "ready",
+  "cover": "cover.jpg",
+  "entry": "index.html",
+  "accent": "#7a4a2a",
+  "created": "2026-11-22"
+}

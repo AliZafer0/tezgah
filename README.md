@@ -8,7 +8,7 @@
 Kilim, girih, makam, hat, ebru… Canvas, WebGL ve Web Audio ile, bağımlılıksız.
 
 [![Canlı galeri](https://img.shields.io/badge/canl%C4%B1-galeri-d6a756?style=flat-square)](https://py.execore.cloud/)
-[![Projeler](https://img.shields.io/badge/proje-19-9b2a22?style=flat-square)](#sahne)
+[![Projeler](https://img.shields.io/badge/proje-23-9b2a22?style=flat-square)](#sahne)
 [![Lisans: MIT](https://img.shields.io/badge/lisans-MIT-263b5e?style=flat-square)](LICENSE)
 [![Bağımlılık](https://img.shields.io/badge/projelerde%20ba%C4%9F%C4%B1ml%C4%B1l%C4%B1k-0-55703f?style=flat-square)](#yapı)
 
@@ -162,6 +162,34 @@ Türkçe F klavyeli daktilo: tuş vuruşu, şerit mürekkebi, satır sonu zili; 
 Buğulu cama parmakla yaz; buğu yavaşça geri gelir, damlalar iz bırakarak süzülür.<br>
 <a href="https://py.execore.cloud/projects/hamam-cami/">Canlı</a> · <a href="projects/hamam-cami/">Kaynak</a>
 </td>
+<td width="50%" valign="top">
+<a href="https://py.execore.cloud/projects/telkari/"><img src="projects/telkari/cover.jpg" alt="Telkari"></a>
+<h3>💍 Telkari</h3>
+Gümüş tel işçiliği: spiraller simetriyle çoğalıp broş, küpe ya da madalyon deseni örer.<br>
+<a href="https://py.execore.cloud/projects/telkari/">Canlı</a> · <a href="projects/telkari/">Kaynak</a>
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+<a href="https://py.execore.cloud/projects/kahve-fali/"><img src="projects/kahve-fali/cover.jpg" alt="Kahve Falı"></a>
+<h3>☕ Kahve Falı</h3>
+Kahveni iç, fincanı kapat; akıp donan telvedeki şekillerden eğlencelik bir fal.<br>
+<a href="https://py.execore.cloud/projects/kahve-fali/">Canlı</a> · <a href="projects/kahve-fali/">Kaynak</a>
+</td>
+<td width="50%" valign="top">
+<a href="https://py.execore.cloud/projects/usturlap/"><img src="projects/usturlap/cover.jpg" alt="Usturlap"></a>
+<h3>🧭 Usturlap</h3>
+İstanbul enlemine göre çalışan usturlap: örümceği çevir, yüksekliği oku, saati bul.<br>
+<a href="https://py.execore.cloud/projects/usturlap/">Canlı</a> · <a href="projects/usturlap/">Kaynak</a>
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+<a href="https://py.execore.cloud/projects/ucurtma/"><img src="projects/ucurtma/cover.jpg" alt="Uçurtma"></a>
+<h3>🪁 Uçurtma</h3>
+Rüzgârda uçurtma: kuyruk dalgalanır, ip gerilir ya da boşalır; köprüyü ayarla, ipi sal.<br>
+<a href="https://py.execore.cloud/projects/ucurtma/">Canlı</a> · <a href="projects/ucurtma/">Kaynak</a>
+</td>
 <td width="50%" valign="top"></td>
 </tr>
 </table>
@@ -188,6 +216,10 @@ Projelerin arkasındaki fikirler. Ayrıntılar her projenin kendi README'sinde.
 | [Mukarnas](projects/mukarnas/) | Yarım hücre kaydırılmış katlar, nişler arası dolgularla dikişsiz yüzey, sonlu farklarla normal, kandil ışığında WebGL |
 | [F Daktilo](projects/f-daktilo/) | Ayrı kâğıt tuvaline çarpma kipinde mürekkep dokusu, Q konumundan F'ye tuş eşleme, örneksiz daktilo sesleri |
 | [Hamam Camı](projects/hamam-cami/) | Dörtte bir çözünürlüklü silme maskesi, birikimli yeniden buğulanma, kütleli ve takılan damlalar, iz katmanı |
+| [Telkari](projects/telkari/) | Yarım dilimde en büyük boşluğa en büyük kıvrım, `<use>` ile aynalanan kopyalar, tel saydamlığından kabartma ışığı |
+| [Kahve Falı](projects/kahve-fali/) | Girdap alanında kıvrılan telve dereleri, bağlı bileşenlerde uzama, eğrilik ve delik ölçümüyle şekil sınıflama |
+| [Usturlap](projects/usturlap/) | Güney kutbundan stereografik izdüşüm, yıldız zamanıyla dönen örümcek, yükseklikten saat açısı çözümü |
+| [Uçurtma](projects/ucurtma/) | Verlet üçgeni ve zincirler, düz levha hava kuvveti, köprü noktasıyla kendiliğinden bulunan denge |
 | [Impossible Room](projects/impossible-room/) | Ortografik izdüşümde derinlik boyunca kaydırılan parçalar, histerezisli çözüm algılama |
 
 Ortak ilkeler:

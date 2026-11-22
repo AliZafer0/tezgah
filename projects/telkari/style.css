@@ -1,0 +1,47 @@
+:root { color-scheme: dark; --ink: #e9edf1; --muted: #9aa6b2; --line: rgba(233, 237, 241, 0.16); --panel: rgba(22, 26, 31, 0.82); --accent: #c9d3dc; --safe-b: env(safe-area-inset-bottom, 0px); --safe-t: env(safe-area-inset-top, 0px); }
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; }
+body { background: radial-gradient(120% 90% at 60% 40%, #2b3038 0%, #14171b 70%); color: var(--ink); font: 15px/1.45 ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif; overflow: hidden; }
+button, input { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+.layout { position: fixed; inset: 0; display: grid; grid-template-columns: 300px 1fr; }
+.stage { grid-column: 1 / -1; grid-row: 1; display: grid; place-items: center; padding: 3vmin 3vmin 3vmin 300px; }
+#eser { width: 100%; height: 100%; max-width: 94vmin; max-height: 94vmin; overflow: visible; }
+.head { position: absolute; top: calc(20px + var(--safe-t)); right: 26px; text-align: right; pointer-events: none; }
+.head h1 { margin: 0; font: 400 1.8rem/1 'Iowan Old Style', Palatino, Georgia, serif; letter-spacing: 0.34em; color: #dfe6ec; }
+.head p { margin: 4px 0 0; font: italic 0.95rem Georgia, serif; color: var(--muted); }
+.panel { grid-column: 1; grid-row: 1; align-self: start; margin: 16px; padding: 14px; display: grid; gap: 12px; background: var(--panel); border: 1px solid var(--line); border-radius: 14px; box-shadow: 0 14px 40px rgba(0, 0, 0, 0.45); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); position: relative; z-index: 2; }
+fieldset { border: 0; margin: 0; padding: 0; min-width: 0; }
+legend { padding: 0; margin-bottom: 6px; font: 600 0.72rem/1.2 ui-monospace, Menlo, monospace; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+.seg { display: grid; gap: 5px; }
+.seg3 { grid-template-columns: repeat(3, 1fr); }
+.seg4 { grid-template-columns: repeat(2, 1fr); }
+.seg label { position: relative; }
+.seg input { position: absolute; inset: 0; opacity: 0; margin: 0; cursor: pointer; }
+.seg span { display: flex; align-items: center; justify-content: center; min-height: 36px; border: 1px solid var(--line); border-radius: 8px; font-size: 0.88rem; background: rgba(255, 255, 255, 0.04); }
+.seg input:checked + span { background: linear-gradient(180deg, #eef2f5, #aeb8c2); color: #15191e; border-color: transparent; font-weight: 600; }
+.seg input:focus-visible + span { outline: 2px solid var(--accent); outline-offset: 2px; }
+.range { display: grid; grid-template-columns: 4em 1fr 1.6em; align-items: center; gap: 6px; font-size: 0.86rem; }
+.range input { width: 100%; accent-color: #c9d3dc; }
+.range output { text-align: right; font: 0.8rem ui-monospace, Menlo, monospace; color: var(--muted); }
+.actions { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 5px; }
+.actions button { min-height: 40px; padding: 0 4px; border: 1px solid var(--line); border-radius: 8px; background: rgba(255, 255, 255, 0.06); cursor: pointer; font-size: 0.86rem; touch-action: manipulation; }
+.actions button:hover { border-color: var(--accent); }
+.actions #yeni { background: linear-gradient(180deg, #eef2f5, #aeb8c2); color: #15191e; border-color: transparent; font-weight: 600; }
+.fine { margin: 0; font-size: 0.76rem; color: var(--muted); }
+.wire { fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.draw .wire { stroke-dasharray: var(--len) var(--len); stroke-dashoffset: var(--len); animation: ciz 1.6s cubic-bezier(.3,.6,.3,1) forwards; animation-delay: var(--d, 0s); }
+.draw .bead { opacity: 0; animation: belir 0.5s ease forwards; animation-delay: var(--d, 1.2s); }
+@keyframes ciz { to { stroke-dashoffset: 0; } }
+@keyframes belir { to { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .draw .wire, .draw .bead { animation: none; stroke-dashoffset: 0; opacity: 1; } }
+@media (max-width: 760px), (max-aspect-ratio: 4/5) {
+  .layout { grid-template-columns: 1fr; grid-template-rows: 1fr auto; }
+  .stage { grid-row: 1; padding: calc(54px + var(--safe-t)) 10px 8px; }
+  .panel { grid-row: 2; align-self: end; margin: 0; border-radius: 16px 16px 0 0; padding: 10px 12px calc(10px + var(--safe-b)); gap: 8px; }
+  .seg4 { grid-template-columns: repeat(4, 1fr); }
+  .head { top: calc(12px + var(--safe-t)); right: 14px; }
+  .head h1 { font-size: 1.15rem; }
+  .head p, .fine { display: none; }
+}

@@ -1,0 +1,11 @@
+{
+  "title": "Uçurtma",
+  "slug": "ucurtma",
+  "description": "İpinden tutulan bir uçurtma: rüzgâr eser, kuyruk dalgalanır, ip gerilir ya da boşalır. İpi sal, topla, köprüyü ayarla, istersen kes.",
+  "tags": ["fizik", "uçurtma", "verlet", "rüzgâr", "simülasyon"],
+  "status": "ready",
+  "cover": "cover.jpg",
+  "entry": "index.html",
+  "accent": "#d2473a",
+  "created": "2026-11-22"
+}

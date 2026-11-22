@@ -1,0 +1,11 @@
+{
+  "title": "Usturlap",
+  "slug": "usturlap",
+  "description": "İstanbul enlemine göre çalışan bir usturlap: örümceği çevir, yıldızların ve Güneş'in yüksekliğini oku; ölçtüğün yükseklikten saati bul.",
+  "tags": ["bilim", "astronomi", "usturlap", "izdüşüm", "araç"],
+  "status": "ready",
+  "cover": "cover.jpg",
+  "entry": "index.html",
+  "accent": "#c49a4a",
+  "created": "2026-11-22"
+}

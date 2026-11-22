@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Uçurtma</title>
+  <meta name="description" content="İpinden tutulan bir uçurtma: rüzgâr eser, kuyruk dalgalanır, ip gerilir ya da boşalır.">
+  <meta name="theme-color" content="#7ec3e6">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <div class="layout">
+    <canvas id="gok" tabindex="0" role="img" aria-label="Tepede uçurtma uçuran bir çocuk; sürükleyerek ipi çekebilirsin" aria-describedby="kbd-help"></canvas>
+    <header class="head">
+      <h1>UÇURTMA</h1>
+      <p>Rüzgâra karşı, ipe güvenle.</p>
+    </header>
+    <section class="panel" aria-label="Uçurtma ayarları">
+      <dl class="oku">
+        <div><dt>Yükseklik</dt><dd id="o-yuk">–</dd></div>
+        <div><dt>İp</dt><dd id="o-ip">–</dd></div>
+        <div><dt>Rüzgâr</dt><dd id="o-ruz">–</dd></div>
+        <div><dt>Gerginlik</dt><dd><span class="bar"><i id="o-ger"></i></span></dd></div>
+      </dl>
+      <div class="reel">
+        <button type="button" id="topla" aria-label="İpi topla">− Topla</button>
+        <button type="button" id="sal" aria-label="İpi sal">Sal +</button>
+      </div>
+      <div class="range"><label for="ruzgar">Rüzgâr</label><input id="ruzgar" type="range" min="0" max="14" step="0.5" value="7"><output id="ruzgar-out" for="ruzgar">7</output></div>
+      <div class="range"><label for="kopru">Köprü</label><input id="kopru" type="range" min="32" max="52" value="40"><output id="kopru-out" for="kopru">40</output></div>
+      <div class="actions">
+        <button type="button" id="kes">İpi kes</button>
+        <button type="button" id="yeni">Yeni uçurtma</button>
+      </div>
+      <p class="fine" id="kbd-help">Gökyüzünü sürükleyerek ipi çek. Klavye: oklar eli oynatır, + ve − ipi salar ya da toplar. Köprü buruna yakınsa uçurtma alçak ve uslu uçar, geride kalırsa diklenir, takla atabilir.</p>
+    </section>
+  </div>
+  <p class="sr-only" id="status" aria-live="polite"></p>
+</body>
+</html>

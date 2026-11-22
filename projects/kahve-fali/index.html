@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Kahve Falı</title>
+  <meta name="description" content="Kahveni iç, fincanı kapat; telvedeki şekillerden eğlencelik bir fal.">
+  <meta name="theme-color" content="#3a2618">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <div class="layout">
+    <canvas id="masa" role="img" aria-label="Masada bir Türk kahvesi fincanı"></canvas>
+    <header class="head">
+      <h1>KAHVE FALI</h1>
+      <p>Bir fincan kahvenin kırk yıl hatırı var.</p>
+    </header>
+    <section class="panel" aria-label="Kahve falı">
+      <label class="niyet"><span>Niyetin</span><input id="niyet" maxlength="60" placeholder="İçinden tut ya da yaz…" autocomplete="off"></label>
+      <div class="actions">
+        <button type="button" id="ileri" class="main">Kahveni iç</button>
+        <button type="button" id="yeni">Yeni fincan</button>
+      </div>
+      <ol class="adimlar" aria-label="Adımlar">
+        <li data-a="0">İç</li><li data-a="1">Kapat</li><li data-a="2">Soğusun</li><li data-a="3">Aç</li><li data-a="4">Yorum</li>
+      </ol>
+      <div id="fal" class="fal" aria-live="polite"></div>
+      <p class="fine">Fal eğlence içindir. Şekiller telvenin gerçekten aktığı yerlerden bulunur; aynı adres aynı fincanı açar.</p>
+    </section>
+  </div>
+  <p class="sr-only" id="status" aria-live="polite"></p>
+</body>
+</html>

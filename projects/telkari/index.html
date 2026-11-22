@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Telkari</title>
+  <meta name="description" content="Gümüş tel işçiliği: spiraller simetriyle çoğalıp bir broş ya da küpe deseni örer.">
+  <meta name="theme-color" content="#1b1f24">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <div class="layout">
+    <main class="stage">
+      <svg id="eser" role="img" aria-labelledby="eser-baslik" viewBox="-520 -520 1040 1040" preserveAspectRatio="xMidYMid meet">
+        <title id="eser-baslik">Telkari deseni</title>
+      </svg>
+    </main>
+    <header class="head">
+      <h1>TELKARİ</h1>
+      <p>Tel tel, kıvrım kıvrım.</p>
+    </header>
+    <section class="panel" aria-label="Telkari ayarları">
+      <div class="actions">
+        <button type="button" id="yeni">Yeni desen</button>
+        <button type="button" id="svg">SVG</button>
+        <button type="button" id="png">Resim</button>
+      </div>
+      <fieldset>
+        <legend>Biçim</legend>
+        <div class="seg seg4" role="radiogroup" aria-label="Biçim">
+          <label><input type="radio" name="bicim" value="m" checked><span>Madalyon</span></label>
+          <label><input type="radio" name="bicim" value="c"><span>Çiçek</span></label>
+          <label><input type="radio" name="bicim" value="y"><span>Yıldız</span></label>
+          <label><input type="radio" name="bicim" value="d"><span>Damla</span></label>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Maden</legend>
+        <div class="seg seg3" role="radiogroup" aria-label="Maden">
+          <label><input type="radio" name="maden" value="g" checked><span>Gümüş</span></label>
+          <label><input type="radio" name="maden" value="a"><span>Altın</span></label>
+          <label><input type="radio" name="maden" value="b"><span>Bakır</span></label>
+        </div>
+      </fieldset>
+      <div class="range"><label for="kol">Kol</label><input id="kol" type="range" min="3" max="12" value="6"><output id="kol-out" for="kol">6</output></div>
+      <div class="range"><label for="sik">Sıklık</label><input id="sik" type="range" min="1" max="9" value="5"><output id="sik-out" for="sik">5</output></div>
+      <p class="fine" id="bilgi">Her desen bir tohumdan doğar; adresi paylaşan aynı broşu görür. Damla biçimi tek eksende aynalanır.</p>
+    </section>
+  </div>
+  <p class="sr-only" id="status" aria-live="polite"></p>
+</body>
+</html>
